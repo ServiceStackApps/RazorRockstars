@@ -17,6 +17,7 @@
         <div><b>@Html.Label("FirstName")</b> @Html.TextBox("FirstName","Amy")</div>
         <div><b>@Html.Label("LastName")</b> @Html.TextBox("LastName","Winehouse")</div>
         <div><b>@Html.Label("Age")</b> @Html.TextBox("Age","27")</div>
+        <div><b>@Html.Label("Alive")</b> @Html.CheckBox("Alive", true)</div>
         <p><button type="submit">Add new Rockstar</button></p>
     </form>
 
@@ -47,7 +48,7 @@
         @foreach (var rockstar in Model.Results)
         {
             <tr>
-                <td>@rockstar.FirstName @rockstar.LastName </td>
+                <td><a href="@rockstar.Url">@rockstar.FirstName @rockstar.LastName</a></td>
                 <td><a href="/rockstars/aged/@rockstar.Age">@rockstar.Age</a></td>     
                 <td><a href="/rockstars/delete/@rockstar.Id">delete</a></td>       
             </tr>

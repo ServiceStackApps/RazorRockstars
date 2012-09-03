@@ -13,8 +13,15 @@ a {
 </style>
 </head>
     <body>
+        
         <div id="page">
-            <h6>Rocking the grave...</h6>
+            <div id="info">
+                <h6>Rocking the grave...</h6>
+                <p>
+                    <a id="home" href="/rockstars"></a>
+                    <a href="Content?format=text.bare">Markdown Only</a>
+                </p>
+            </div>
 
             <h1>@ViewBag.Title</h1>
             
@@ -29,9 +36,9 @@ a {
 
         </div>
         
-        
-        <div id="showcase">
-            @RenderSection("Showcase")
+        <div id="preview">
+            @RenderSection("preview")
         </div>
+
     </body>
 </html>
