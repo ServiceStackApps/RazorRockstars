@@ -1,0 +1,38 @@
+﻿@inherits ViewPage
+
+﻿@{
+    ViewBag.Title = "Bruce Springsteen";
+}
+<div id="content-page">
+    
+    <img src="splash.jpg" id="splash" alt="Bruce Springsteen" />
+    <p>
+        Bruce Frederick Joseph Springsteen, nicknamed "The Boss", is an American singer-songwriter 
+        and multi-instrumentalist who records and tours with the E Street Band. 
+    </p>
+
+    <dl>
+        <dt> 
+            Born
+        </dt>
+        <dd>
+            September 23, 1949 (age 62), Long Branch
+        </dd>
+        <dt>
+            Spouse
+        </dt>
+        <dd>
+            Patti Scialfa (m. 1991), Julianne Phillips (m. 1985-1989)
+        </dd>
+        <dt>
+            Music groups
+        </dt>
+        <dd>
+            E Street Band, U.S.A. for Africa, Steel Mill
+        </dd>
+    </dl>
+
+    @Html.Partial("Content")
+
+</div>
+ 

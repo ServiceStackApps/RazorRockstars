@@ -1,0 +1,33 @@
+﻿@inherits ViewPage
+
+﻿@{
+    ViewBag.Title = "Jimi Hendrix";
+}
+<div id="content-page">
+    
+    <img src="splash.jpg" id="splash" alt="Jimi Hendrix" />
+    <p>
+        James Marshall "Jimi" Hendrix was an American musician and singer-songwriter. 
+        He is widely considered to be the greatest electric guitarist in music history and one of 
+        the most influential musicians of ... 
+    </p>
+
+    <dl>
+        <dt> 
+            Born
+        </dt>
+        <dd>
+            November 27, 1942, Seattle
+        </dd>
+        <dt>
+            Died
+        </dt>
+        <dd>
+            September 18, 1970, London
+        </dd>
+    </dl>
+
+    @Html.Partial("Content")
+
+</div>
+

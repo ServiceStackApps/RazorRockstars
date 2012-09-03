@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>Dead Rockstars</title>
+<link href="/stars/style.css" rel="stylesheet" />
+<style type="text/css">
+body {
+    background: #FAA;
+}
+a {
+    color: #a30;    
+}
+</style>
+</head>
+    <body>
+        <div id="page">
+            <h6>Rocking the grave...</h6>
+
+            <h1>@ViewBag.Title</h1>
+            
+            @Html.Partial("MenuDead")
+        
+            <div id="content">
+                @RenderBody()
+                <b class="clear"></b>
+            </div>
+            
+            @Html.Partial("MenuAlive")
+
+        </div>
+        
+        
+        <div id="showcase">
+            @RenderSection("Showcase")
+        </div>
+    </body>
+</html>

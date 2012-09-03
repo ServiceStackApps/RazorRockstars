@@ -1,0 +1,32 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>Alive Rockstars</title>
+<link href="/stars/style.css" rel="stylesheet" />
+<style type="text/css">
+body {
+    background: #AFA;
+}
+a {
+    color: #060;    
+}
+</style>
+</head>
+    <body>
+        <div id="page">
+            <h6>Rockstars still rocking it...</h6>
+
+            <h1>@ViewBag.Title</h1>
+            
+            @Html.Partial("MenuAlive")
+        
+            <div id="content">
+                @RenderBody()
+                <b class="clear"></b>
+            </div>
+            
+            @Html.Partial("MenuDead")
+
+        </div>
+    </body>
+</html>

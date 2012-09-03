@@ -1,0 +1,53 @@
+﻿@inherits ViewPage
+
+﻿@{
+    ViewBag.Title = "Kurt Cobain";
+}
+<div id="content-page">
+    
+    <img src="splash.jpg" id="splash" alt="Kurt Cobain" />
+    <p>
+        Kurt Donald Cobain was an American singer-songwriter, musician and artist, best known as the 
+        lead singer and guitarist of the grunge band Nirvana. 
+    </p>
+
+    <dl>
+        <dt> 
+            Born
+        </dt>
+        <dd>
+            February 20, 1967, Aberdeen
+        </dd>
+        <dt> 
+            Died
+        </dt>
+        <dd>
+            April 5, 1994, Seattle
+        </dd>
+        <dt>
+            Spouse
+        </dt>
+        <dd>
+            Courtney Love (m. 1992-1994)
+        </dd>
+        <dt>
+            Music groups
+        </dt>
+        <dd>
+            Nirvana
+        </dd>
+    </dl>
+
+    @Html.Partial("Content")
+
+</div>
+
+@section Showcase {
+    <h2>Layout</h2>
+    <div>/</div>
+    <p>
+        The Layout
+    </p>
+    
+    <h2>View Page</h2>
+}
