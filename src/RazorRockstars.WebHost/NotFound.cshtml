@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "Empty";
+    var search = (@Request.PathInfo ?? "").SplitOnLast("/").Last().Trim();
+}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Page Not Found</title>
+        <style>
+        BODY {
+            background-color:white;
+            color:#000000;
+            font-family:Verdana;
+            margin: 0;            
+        }
+        H1 {
+            background-color: #c30;
+            color: #FFF;
+            font-family: Tahoma; 
+            font-size: 26px;
+            font-weight: normal;
+            margin: 0;
+            padding: 10px 0 3px 15px;
+        }
+        #content {
+            padding: 15px;
+        }
+        input {
+            padding: 5px 8px;
+        }
+        </style>
+    </head>
+    <body>        
+        <h1>Page Not Found</h1>
+        
+        <div id="content">
+            <p>
+                We're sorry <b>@Request.PathInfo</b> is no longer here.
+            </p> 
+            @if (!string.IsNullOrEmpty(search))
+            {
+                <p> 
+                    Maybe Google has it?
+                </p>
+                <form action="https://www.google.com/search" method="GET">
+                    <input type="search" name="q" value="@search"/>
+                    <input type="submit" value="Search"/>
+                </form>
+            }
+        </div>
+    </body>
+</html>

@@ -33,7 +33,7 @@ Donald Leland Cobain (born 1946). His parents were married on July 31, 1965 in C
 His ancestry included Irish, English, Scottish, and German. Cobain's Irish ancestors 
 migrated from County Tyrone of Northern Ireland in 1875. Researchers have found them to have been 
 shoemakers, originally named Cobane, who came from the village of Inishatieve near Pomeroy, settling 
-in Cornwall, Ontario, Canada, and then in Washington.[12] Cobain had one younger sister named Kimberly, 
+in Cornwall, Ontario, Canada, and then in Washington. Cobain had one younger sister named Kimberly, 
 born on April 24, 1970. 
 
 Cobain's family had a musical background. His maternal uncle Chuck Fradenburg starred in a band called 

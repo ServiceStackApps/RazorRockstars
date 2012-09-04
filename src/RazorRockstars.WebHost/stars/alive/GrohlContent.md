@@ -54,7 +54,7 @@ While in high school, Grohl played in several local bands, including a stint on 
 Freak Baby. While playing in Freak Baby, he taught himself to play drums. When Freak Baby kicked out 
 its bass player, Grohl decided to switch to drums, and the new band called themselves Mission Impossible.
 During his developing years as a drummer, Grohl cited John Bonham as his greatest influence, and 
-eventually had Bonham's three-circle logo tattooed on his wrist.[10] Mission Impossible later rebranded 
+eventually had Bonham's three-circle logo tattooed on his wrist. Mission Impossible later rebranded 
 themselves Fast before breaking up, after which Grohl joined the post-punk-influenced hardcore punk band 
 Dain Bramage.
 Many of Grohl's early influences were gained at the 9:30 club, a live music venue in Washington D.C.: 

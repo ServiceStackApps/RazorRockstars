@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net;
 using System.Runtime.Serialization;
 using Funq;
 using ServiceStack.Common;
@@ -29,6 +30,12 @@ namespace RazorRockstars.WebHost
                 db.CreateTableIfNotExists<Rockstar>();
                 db.InsertAll(Rockstar.SeedData);
             }
+
+            SetConfig(new EndpointHostConfig {
+                CustomHttpHandlers = {
+                    { HttpStatusCode.NotFound, new RazorHandler("/notfound") }
+                }
+            });
 		}
     }
 
@@ -79,6 +86,7 @@ namespace RazorRockstars.WebHost
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int? Age { get; set; }
+        public bool Alive { get; set; }
         public string Delete { get; set; }
     }
 

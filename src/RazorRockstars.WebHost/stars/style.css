@@ -3,15 +3,17 @@
     color: #444;
     padding: 48px;
 }
-#page {
+#page, #preview {
     background: #fff;
     box-shadow: 0 3px 8px rgba(100, 100, 100, 0.3);
     font-size: 74%;
     padding: 10px 40px 20px 40px;
 	margin: auto;
     max-width: 960px;
-    vertical-align: baseline;
 }       
+#preview {
+    margin: 40px auto;   
+}
 #content {
     padding: 0 0 10px 0;
 }     

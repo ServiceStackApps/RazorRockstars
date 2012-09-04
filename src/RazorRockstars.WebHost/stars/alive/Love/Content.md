@@ -1,45 +1,47 @@
-﻿Eddie Vedder (born Edward Louis Severson III; December 23, 1964) is an American musician and 
-singer-songwriter who is best known for being the lead singer and one of three guitarists of the 
-alternative rock band Pearl Jam. Known for his powerful vocals, he is widely considered an icon of 
-alternative rock. He has been ranked at #7 on a list of "Best Lead Singers of All Time", compiled by 
-Rolling Stone. He is also involved in soundtrack work and contributes to albums by other artists. 
-In 2007, Vedder released his first solo album as a soundtrack for the film Into the Wild (2007). 
-His second album, Ukulele Songs, along with a live DVD titled Water on the Road, was released on 31 May 2011
+﻿Courtney Michelle Love (born Courtney Michelle Harrison; July 9, 1964) is an American singer-songwriter, 
+musician, actress and artist. Love initially gained notoriety in the Los Angeles indie rock scene with 
+her band Hole, which she formed in 1989 with Eric Erlandson. Their debut album, Pretty on the Inside 
+(1991) garnered them critical praise, and they went on to achieve international critical and commercial 
+acclaim for their following albums, Live Through This (1994) and Celebrity Skin (1998).
+
+Love also had a career in acting, originally landing small roles in Alex Cox films in the 1980s. In 1996, 
+Love starred in The People vs. Larry Flynt and was nominated for a Golden Globe for her performance. 
+She later had a brief solo career in the early 2000s after the dissolution of Hole, releasing America's 
+Sweetheart (2004), and went through several rehab sentences and run-ins with the law until achieving 
+sobriety. In 2009, Love reformed Hole with new members and released Nobody's Daughter (2010). In 2012, 
+she debuted an art exhibit featuring a collection of her own paintings and drawings titled 
+"And She's Not Even Pretty".
+
+Love was married to Kurt Cobain, frontman of the grunge band Nirvana, with whom she has a daughter, 
+Frances Bean Cobain. Throughout her career, Love's wild stage antics and subversive feminist attitude 
+have polarized audiences and critics, with Rolling Stone once calling her 
+
+> "the most controversial woman in the history of rock."
 
 ## Early life
 
-Vedder was born Edward Louis Severson III in the Chicago suburb of Evanston, Illinois, son of 
-Karen Lee Vedder and Edward Louis Severson, Jr. His parents divorced in 1965, when Vedder was one 
-year old. His mother soon remarried a man named Peter Mueller, an attorney, and Vedder was raised 
-believing that Mueller was his biological father. His adopted name became Edward Mueller. While 
-living in Evanston, Vedder's family fostered seven younger children in a group home.
-In the mid-1970s, the family, including Vedder's three younger half-brothers, moved to San Diego County, 
-California. It was at this point that Vedder, who had received a guitar from his mother on his twelfth 
-birthday, began turning to music (as well as surfing) as a source of comfort. He particularly found 
-solace in The Who's 1973 album, Quadrophenia. He said, 
+Courtney Michelle Harrison was born in 1964 in San Francisco, California, to Linda Carroll, a 
+psychotherapist, and Hank Harrison, a publisher who had some association with the Grateful Dead; at 
+five years old, Love was included in a group picture on the back of the band's third album, Aoxomoxoa 
+(1969). Her parents divorced in 1969, with custody being awarded to Carroll after she alleged 
+that Harrison had fed LSD to Love when she was three years old, an allegation which he denied. 
+Carroll then remarried, eventually giving birth to two more daughters and adopting a son. Carroll, in an 
+autobiography, claimed to be the daughter of Marlon Brando, alleging that she had DNA tests done to prove 
+it. Love's biological grandmother, Paula Fox, had an affair with Brando in the 1940s.
 
-> "When I was around 15 or 16... I felt all alone... I was all alone-except for music."
+Love had a nomadic and troubled childhood. She moved with her family to Marcola, Oregon in 1970, and then 
+briefly lived in New Zealand before being sent back to live with her stepfather in Oregon. At age 14, 
+Love was arrested for shoplifting a t-shirt and was sent to Hillcrest Youth Correctional Facility. 
+According to the Oregon's Children's Services Division, Love was then moved to over 20 different 
+facilities and foster homes between 1978 and 1980. At age 16, Love moved to Portland, where she 
+began working illegally as an exotic dancer, and briefly as a DJ at Portland's community radio station, 
+KBOO. She also took job opportunities working briefly at dance halls in Japan and Taiwan, and wrote 
+missives under the name "Courtney Michelle" in punk-zine Maximumrocknroll on local Portland bands Poison 
+Idea and Rancid Vat. 
 
-His mother and Mueller divorced when Vedder was in his late teens. His mother and brothers moved back 
-to the Chicago area, but Vedder remained with his stepfather in California so he would not have to 
-change high schools.
-
-After the divorce Vedder met Uncle Scott and learned the truth about his parentage, that Mueller was 
-really his stepfather. Vedder had met his biological father briefly as a child, but had believed that 
-Severson was merely an old friend of his parents. By the time Vedder learned the truth, Severson had 
-died of multiple sclerosis. By his senior year at San Dieguito High School, Vedder was on his own, 
-living in an apartment and supporting himself with a nightly job at a drug store in Encinitas.
-He eventually dropped out of high school in his senior year due to the pressures of balancing school 
-with working.[10] He joined the rest of his family in Chicago, and it was at this time that he changed 
-his name to Eddie Vedder, Vedder being his mother's maiden name.
-
-In the early 1980s, Vedder worked as a waiter, earned his high school GED, and briefly attended a 
-community college near Chicago. In 1984, Vedder returned to San Diego, California, with his 
-girlfriend, Beth Liebling. He kept busy recording demo tapes at his home and working various jobs, 
-including a position as a contracted security guard at the La Valencia Hotel in La Jolla. Vedder 
-had several stints in San Diego area bands, including Surf and Destroy and The Butts. One of those 
-bands, called Indian Style, included future Rage Against the Machine and Audioslave drummer 
-Brad Wilk. In 1988, Vedder became the vocalist for the San Diego progressive funk rock band Bad 
-Radio. The music of the original incarnation of the band was influenced by Duran Duran; however, 
-after Vedder joined Bad Radio, the band moved on to a more alternative rock sound influenced by the 
-Red Hot Chili Peppers.
+Love has said that she "didn't have a lot of social skills" as a teenager, and that she learned a lot of 
+them while frequenting gay clubs with friends. In 1981, a social worker discovered a trust fund 
+established for Love by her mother's adoptive parents, which provided her with a $500 monthly stipend, 
+and she gained legal emancipation. She subsequently traveled to Ireland where she took two semesters 
+at Trinity College studying theology, and relocated briefly to England, moving into the Liverpool home of 
+Julian Cope and befriending Ian McCulloch.

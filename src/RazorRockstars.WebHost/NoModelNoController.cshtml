@@ -17,7 +17,7 @@
     <div>@title</div>
     <ul>
         @foreach (var rockstar in rockstars) {
-            <li>@rockstar.FirstName - @rockstar.LastName (<a href="?Age=@rockstar.Age">@rockstar.Age</a>)</li>
+            <li><a href="@rockstar.Url">@rockstar.LastName, @rockstar.FirstName</a> (<a href="?Age=@rockstar.Age">@rockstar.Age</a>)</li>
         }
     </ul>
 
