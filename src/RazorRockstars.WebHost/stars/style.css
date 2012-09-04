@@ -14,6 +14,14 @@
 #preview {
     margin: 40px auto;   
 }
+#preview h3 a {
+    color: green;
+}
+#preview h3 b 
+{
+    display: inline-block;
+    width: 100px;
+}
 #content {
     padding: 0 0 10px 0;
 }     

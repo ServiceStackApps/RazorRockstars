@@ -34,6 +34,7 @@ namespace RazorRockstars.WebHost
 		}
     }
 
+    //Poco Data Model for OrmLite + SeedData 
     public class Rockstar
     {
         public static Rockstar[] SeedData = new[] {

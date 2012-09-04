@@ -1,7 +1,8 @@
 ﻿@inherits ViewPage<RockstarsResponse>
 
 @{
-    ViewBag.Title = Model.Aged.HasValue ? "{0} year old rockstars".Fmt(Model.Aged) : "All Rockstars";
+    ViewBag.Title = Model.Aged.HasValue 
+        ? "{0} year old rockstars".Fmt(Model.Aged) : "All Rockstars";
     Layout = "HtmlReport";
 }
 
@@ -22,7 +23,7 @@
     </form>
 
     <h3>Other Pages</h3>
-    <div><a class="home" href="/rockstars">/rockstars</a></div>
+    <div><a class="home" href="/">/home</a></div>
     <div><a class="rzr" href="/TypedModelNoController">/TypedModelNoController</a></div>
     <div><a class="rzr" href="/NoModelNoController">/NoModelNoController</a></div>
 </div>
@@ -56,10 +57,15 @@
     </tbody>
 </table>
 
-<p style="text-align:center;font:22px Georgia,serif;">source files for this demo</p>
+<div id="preview">
+    <h1>Implementation</h1>
 
-<h1>C# AppHost and Rockstars Service</h1>
-<script src="https://gist.github.com/3162223.js"></script>
+    <h3><b>Controller</b> <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/Rockstars.cs">/Rockstars.cs</a></h3>
+    <script src="https://gist.github.com/3616766.js"></script>
 
-<h1>Razor View</h1>
-<script src="https://gist.github.com/3162081.js"></script>
+    <h3><b>View</b> <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/Views/Rockstars.cshtml">/Views/Rockstars.cshtml</a></h3>
+    <script src="https://gist.github.com/3162081.js"></script>
+
+    <h3><b>Layout</b> <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/Views/Shared/HtmlReport.cshtml">/Views/Shared/HtmlReport.cshtml</a></h3>
+    <script src="https://gist.github.com/3616883.js"></script>
+</div>

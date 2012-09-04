@@ -18,10 +18,10 @@ a {
             <div id="info">
                 <h6>Rockstars still rocking it...</h6>
                 <p>
-                    <a id="home" href="/rockstars"></a>
+                    <a id="home" href="/"></a>
                     @if (ViewBag.Title == "Dave Grohl") 
                     {
-                        @*Special case show casing different ways to create and ref pages*@
+                        @*Special case for Grohl show casing an alternative way to layout pages*@
                         <p><a href="GrohlContent?format=text.bare">Markdown Only</a></p>
                     }
                     else
@@ -44,6 +44,8 @@ a {
         </div>
         
         <div id="preview">
+            <h1>Implementation</h1>
+
             @RenderSection("preview")
         </div>
 

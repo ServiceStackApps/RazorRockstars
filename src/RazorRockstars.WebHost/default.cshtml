@@ -1,0 +1,157 @@
+﻿@inherits ViewPage
+
+@{
+    ViewBag.Title = "Razor Rockstars";
+}
+<style type="text/css">
+    body {
+        font-size: 120%;
+    }
+    h1 {
+        color: seagreen;
+    }
+    h3 {
+        color: skyblue;
+        color: #666;
+    }
+    #visual-sitemap {
+        float: right;
+        width: 220px;
+        margin: 0 -90px 0 0;
+        padding: 0 0 0 48px;
+    }
+    #visual-sitemap a {
+        display: block;
+        margin: 20px 0 0 0;
+        box-shadow: 0 3px 8px rgba(100, 100, 100, 0.3);
+    }
+    #visual-sitemap a:hover {
+        background: rgba(255,255,200,.5);
+    }
+    #visual-sitemap img {
+        padding: 5px;
+        width: 150px;
+    }
+    #sitemap {
+        float: left;
+        width: 480px;
+    }
+</style>
+<div id="page">
+     
+     <div id="visual-sitemap">
+         <a href="/stars/dead/cobain"><img src="/img/thumb-05.jpg" /></a>
+         <a href="/stars/alive/grohl"><img src="/img/thumb-01.jpg" /></a>
+         <a href="/stars/dead/hendrix"><img src="/img/thumb-06.jpg" /></a>
+         <a href="/stars/alive/vedder"><img src="/img/thumb-02.jpg" /></a>
+         <a href="/stars/dead/jackson"><img src="/img/thumb-07.jpg" /></a>
+         <a href="/stars/alive/springsteen"><img src="/img/thumb-03.jpg" /></a>
+         <a href="/stars/dead/presley"><img src="/img/thumb-09.jpg" /></a>
+         <a href="/stars/alive/love"><img src="/img/thumb-04.jpg" /></a>
+         <a href="/stars/dead/joplin"><img src="/img/thumb-08.jpg" /></a>
+     </div>
+
+     <h1>Razor Rockstars</h1>
+
+     <h2>Introducing ServiceStack's new HTML Powers</h2>
+     <p>
+         Razor Rockstars is <a href="http://www.servicestack.net">ServiceStack's</a> demo website 
+         showcasing ServiceStack's new MVC Razor Engine support and its new web development model
+         allowing you to provide a rich HTML story whilst re-using your existing ServiceStack services.
+         This demo doesn't use any other framework apart from ServiceStack which just makes use of 
+         Razor's support (sans MVC).
+     </p>
+     
+     <h3>Runs Everywhere</h3>
+     <p>
+         Like the rest of ServiceStack, you can create websites and REST services in any host on 
+         any platform, i.e:
+     </p>
+     <ul>
+         <li>An ASP.NET host</li>
+         <li>A Stand-alone in a self-hosted HttpListener with external views</li>
+         <li>A Stand-alone in a self-hosted HttpListener with embedded Razor views in your host.dll</li>
+         <li>On Linux with Mono, in any
+             <a href="http://stackoverflow.com/a/12188358/85785">supported ASP.NET host or self-host configuration</a>
+         </li>
+     </ul>
+     
+     <h3>All pages includes the code and markup used to render itself</h3>
+     <p>
+         To provide a better idea of how everything works, all pages include the gists of the source code 
+         needed to render itself. 
+     </p>
+     
+     <h3>Create Websites without any Controllers</h3>
+     <p>
+         Many times however (especially for read-heavy pages) you won't even need a Controller and can
+         call your MVC Razor (or Markdown Razor) pages directly. ServiceStack has very good support for
+         this story where you can omit the <b class="rzr">.cshtml</b> or <b class="md">.md</b>
+         file extensions and it will execute the designated pages with the resulting pretty urls.
+         Even when you call pages with the .ext on it (as done by VS.NET when hitting F5 inside a page)
+         it will automatically be re-directed to the pretty url (and not throw a YSOD as you might expect).
+     </p>
+     <p>
+         Executing pages directly (i.e. without a controller) is known as the PHP or ASP style. 
+         We've improved support for this style by allowing you to have Custom Base Pages with the 
+         default Base Page already giving you access to multiple providers out-of-the-box like 
+         ADO.NET's <b class="db">IDbConnection</b> as well as ServiceStack's clean 
+         <a href="https://github.com/ServiceStack/ServiceStack/wiki/Sessions">Session</a> and
+         <a href="https://github.com/ServiceStack/ServiceStack/wiki/Caching">Caching</a> providers
+         as well direct access to any of your own providers registered in your AppHost's IOC with:
+         <b class="code">base.Get&lt;IYourProvider&gt;</b>.
+     </p>
+     
+    <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/">
+        <img src="/img/file-structure.png" align="left"/>
+    </a>
+
+    <div id="sitemap">
+        <h2>Sitemap Urls</h2>
+        <ul>
+            <li><a href="/rockstars">/rockstars</a></li>
+            <li><a href="/TypedModelNoController">/TypedModelNoController</a></li>
+            <li><a href="/NoModelNoController">/NoModelNoController</a></li>
+        </ul>
+        <h3>Rockstars still Rocking it</h3>
+        <ul>
+            <li><a href="/stars/alive/grohl">/stars/alive/grohl</a></li>
+            <li><a href="/stars/alive/vedder">/stars/alive/vedder</a></li>
+            <li><a href="/stars/alive/springsteen">/stars/alive/springsteen</a></li>
+            <li><a href="/stars/alive/love">/stars/alive/love</a></li>
+        </ul>
+        <h3>Rockstars that have passed</h3>
+        <ul>
+            <li><a href="/stars/dead/cobain">/stars/dead/cobain</a></li>
+            <li><a href="/stars/dead/hendrix">/stars/dead/hendrix</a></li>
+            <li><a href="/stars/dead/jackson">/stars/dead/jackson</a></li>
+            <li><a href="/stars/dead/joplin">/stars/dead/joplin</a></li>
+            <li><a href="/stars/dead/presley">/stars/dead/presley</a></li>
+        </ul>
+    </div>
+     
+    <h2 style="color:#999">Developing...</h2>
+    
+    <b class="clear"></b>
+</div>
+ 
+ 
+<div id="preview">
+    <h1>Implementation</h1>
+    
+    <h3><b>AppHost</b> <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/AppHost.cs">/AppHost.cs</a></h3>
+    <p>
+        In every ServiceStack web service there is a single AppHost which contains all your 
+        services configuration and registration. Razor Rockstars AppHost is below which sets up the 
+        following things in order:                
+    </p>
+    <ol>
+        <li>Tells ServiceStack which Assemblies to scan for registering existing services</li>
+        <li>Register the MVC Razor Plugin (requires .NET 4.0)</li>
+        <li>Register which DB to use - Razor Rockstars uses OrmLite + Sqlite (32bit/Mono compat)</li>
+        <li>Create the <b class="src">Rockstar</b> table if it doesn't already exist and insert all Seed Data</li>
+        <li>Override ServiceStack's 404 Handler with the <b class="src">/NotFound.cshtml</b> Razor page</li>
+    </ol>
+    <script src="https://gist.github.com/3617557.js"></script>
+
+</div>
