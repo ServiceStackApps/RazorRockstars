@@ -1,13 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Net;
-using System.Runtime.Serialization;
+﻿using System.Net;
 using Funq;
-using ServiceStack.Common;
 using ServiceStack.DataAnnotations;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
-using ServiceStack.ServiceHost;
-using ServiceStack.ServiceInterface;
 using ServiceStack.Text;
 using ServiceStack.WebHost.Endpoints;
 
@@ -73,69 +68,6 @@ namespace RazorRockstars.WebHost
             LastName = lastName;
             Age = age;
             Alive = alive;
-        }
-    }
-
-    [Route("/rockstars")]
-    [Route("/rockstars/aged/{Age}")]
-    [Route("/rockstars/delete/{Delete}")]
-    [Route("/rockstars/{Id}")]
-    public class Rockstars
-    {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int? Age { get; set; }
-        public bool Alive { get; set; }
-        public string Delete { get; set; }
-    }
-
-    //DataContract attributes for CSV Format to detect a DTO so only serializes first Enumerable field
-    [DataContract] 
-    public class RockstarsResponse
-    {
-        [DataMember] public int Total { get; set; }
-        [DataMember] public int? Aged { get; set; }
-        [DataMember] public List<Rockstar> Results { get; set; }
-    }
-
-    public class RockstarsService : RestServiceBase<Rockstars>
-    {
-        public IDbConnectionFactory DbFactory { get; set; }
-
-        public override object OnGet(Rockstars request)
-        {
-            using (var db = DbFactory.OpenDbConnection())
-            {
-                if (request.Delete == "reset")
-                {
-                    db.DeleteAll<Rockstar>();
-                    db.InsertAll(Rockstar.SeedData);
-                }
-                else if (request.Delete.IsInt())
-                {
-                    db.DeleteById<Rockstar>(request.Delete.ToInt());
-                }
-
-                return new RockstarsResponse {
-                    Aged = request.Age,
-                    Total = db.Scalar<int>("select count(*) from Rockstar"),
-                    Results = request.Id != default(int) ?
-                        db.Select<Rockstar>(q => q.Id == request.Id)
-                          : request.Age.HasValue ?
-                        db.Select<Rockstar>(q => q.Age == request.Age.Value)
-                          : db.Select<Rockstar>()
-                };
-            }
-        }
-
-        public override object OnPost(Rockstars request)
-        {
-            using (var db = DbFactory.OpenDbConnection())
-            {
-                db.Insert(request.TranslateTo<Rockstar>());
-                return OnGet(new Rockstars());
-            }
         }
     }
 }
