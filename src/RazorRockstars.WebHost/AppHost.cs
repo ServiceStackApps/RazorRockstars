@@ -9,7 +9,7 @@ using ServiceStack.WebHost.Endpoints;
 //The entire C# code for the stand-alone RazorRockstars demo.
 namespace RazorRockstars.WebHost
 {
-    public class AppHost : AppHostBase 
+    public class AppHost : AppHostBase
     {
         public AppHost() : base("Test Razor", typeof(AppHost).Assembly) { }
 
@@ -31,7 +31,7 @@ namespace RazorRockstars.WebHost
                     { HttpStatusCode.NotFound, new RazorHandler("/notfound") }
                 }
             });
-		}
+        }
     }
 
     //Poco Data Model for OrmLite + SeedData 

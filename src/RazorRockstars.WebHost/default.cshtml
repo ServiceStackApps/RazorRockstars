@@ -6,6 +6,7 @@
 <style type="text/css">
     body {
         font-size: 120%;
+        background: #e6e6e6 url(/img/rip_jobs.png);
     }
     h1 {
         color: seagreen;
@@ -25,8 +26,11 @@
         margin: 20px 0 0 0;
         box-shadow: 0 3px 8px rgba(100, 100, 100, 0.3);
     }
-    #visual-sitemap a:hover {
-        background: rgba(255,255,200,.5);
+    #visual-sitemap a.dead:hover {
+        background: rgba(255,170,170,.5);
+    }
+    #visual-sitemap a.alive:hover {
+        background: rgba(170,255,170,.5);
     }
     #visual-sitemap img {
         padding: 5px;
@@ -40,20 +44,20 @@
 <div id="page">
      
      <div id="visual-sitemap">
-         <a href="/stars/dead/cobain"><img src="/img/thumb-05.jpg" /></a>
-         <a href="/stars/alive/grohl"><img src="/img/thumb-01.jpg" /></a>
-         <a href="/stars/dead/hendrix"><img src="/img/thumb-06.jpg" /></a>
-         <a href="/stars/alive/vedder"><img src="/img/thumb-02.jpg" /></a>
-         <a href="/stars/dead/jackson"><img src="/img/thumb-07.jpg" /></a>
-         <a href="/stars/alive/springsteen"><img src="/img/thumb-03.jpg" /></a>
-         <a href="/stars/dead/presley"><img src="/img/thumb-09.jpg" /></a>
-         <a href="/stars/alive/love"><img src="/img/thumb-04.jpg" /></a>
-         <a href="/stars/dead/joplin"><img src="/img/thumb-08.jpg" /></a>
+         <a class="dead" href="/stars/dead/cobain"><img src="/img/thumb-05.jpg" /></a>
+         <a class="alive" href="/stars/alive/grohl"><img src="/img/thumb-01.jpg" /></a>
+         <a class="dead" href="/stars/dead/hendrix"><img src="/img/thumb-06.jpg" /></a>
+         <a class="alive" href="/stars/alive/vedder"><img src="/img/thumb-02.jpg" /></a>
+         <a class="dead" href="/stars/dead/jackson"><img src="/img/thumb-07.jpg" /></a>
+         <a class="alive" href="/stars/alive/springsteen"><img src="/img/thumb-03.jpg" /></a>
+         <a class="dead" href="/stars/dead/presley"><img src="/img/thumb-09.jpg" /></a>
+         <a class="alive" href="/stars/alive/love"><img src="/img/thumb-04.jpg" /></a>
+         <a class="dead" href="/stars/dead/joplin"><img src="/img/thumb-08.jpg" /></a>
      </div>
 
-     <h1>Razor Rockstars</h1>
+    <a href="http://www.servicestack.net"><img src="/img/title.png" /></a>
 
-     <h2>Introducing ServiceStack's new HTML Powers</h2>
+    <h2>Introducing ServiceStack's new HTML Powers</h2>
      <p>
          Razor Rockstars is <a href="http://www.servicestack.net">ServiceStack's</a> demo website 
          showcasing ServiceStack's new MVC Razor Engine support and its new web development model
@@ -82,18 +86,18 @@
          needed to render itself. 
      </p>
      
-     <h3>Create Websites without any Controllers</h3>
+     <h3>The No Ceremony option - Web pages without Controllers</h3>
      <p>
-         Many times however (especially for read-heavy pages) you won't even need a Controller and can
-         call your MVC Razor (or Markdown Razor) pages directly. ServiceStack has very good support for
-         this story where you can omit the <b class="rzr">.cshtml</b> or <b class="md">.md</b>
-         file extensions and it will execute the designated pages with the resulting pretty urls.
-         Even when you call pages with the .ext on it (as done by VS.NET when hitting F5 inside a page)
-         it will automatically be re-directed to the pretty url (and not throw a YSOD as you might expect).
+         Many times however (especially for read-heavy pages) you don't need any Controller and can just 
+         call your dynamic Razor (or Markdown) pages directly. ServiceStack has very good support for
+         this story that lets you omit the <b class="rzr">.cshtml</b> or <b class="md">.md</b>
+         page extensions and it will still execute the appropriate page with the resulting pretty urls.
+         When you do call pages with the .ext on it (as done by VS.NET when hitting F5 inside a page)
+         it will automatically be re-directed to the pretty url (and not throw a YSOD as we've come to expect with MVC).
      </p>
      <p>
-         Executing pages directly (i.e. without a controller) is known as the PHP or ASP style. 
-         We've improved support for this style by allowing you to have Custom Base Pages with the 
+         Executing pages directly (i.e. without requiring a controller) is known as the PHP or ASP 'top-down' style.
+         We've improved support for this option by allowing you to have Custom Base Pages with the 
          default Base Page already giving you access to multiple providers out-of-the-box like 
          ADO.NET's <b class="db">IDbConnection</b> as well as ServiceStack's clean 
          <a href="https://github.com/ServiceStack/ServiceStack/wiki/Sessions">Session</a> and

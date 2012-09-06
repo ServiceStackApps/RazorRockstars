@@ -83,7 +83,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="img\file-structure.png" />
+    <Content Include="img\green_dust_scratch.png" />
     <Content Include="img\page-icon.png" />
+    <Content Include="img\paper.png" />
+    <Content Include="img\rip_jobs.png" />
     <Content Include="img\thumb-01.jpg" />
     <Content Include="img\thumb-02.jpg" />
     <Content Include="img\thumb-03.jpg" />
@@ -93,6 +97,8 @@
     <Content Include="img\thumb-07.jpg" />
     <Content Include="img\thumb-08.jpg" />
     <Content Include="img\thumb-09.jpg" />
+    <Content Include="img\tileable_wood_texture.png" />
+    <Content Include="img\title.png" />
     <Content Include="stars\alive\grohl.jpg" />
     <Content Include="stars\alive\Love\splash.jpg" />
     <Content Include="stars\alive\Springsteen\splash.jpg" />
