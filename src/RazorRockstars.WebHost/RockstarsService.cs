@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using ServiceStack.Common;
+using ServiceStack.Common.Web;
 using ServiceStack.OrmLite;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
@@ -19,6 +20,8 @@ namespace RazorRockstars.WebHost
         public int? Age { get; set; }
         public bool Alive { get; set; }
         public string Delete { get; set; }
+        public string View { get; set; }
+        public string Template { get; set; }
     }
 
     //DataContract attributes required by CSV Format to detect DTOs and only serialize List
@@ -51,7 +54,7 @@ namespace RazorRockstars.WebHost
                     db.DeleteById<Rockstar>(request.Delete.ToInt());
                 }
 
-                return new RockstarsResponse {
+                var response = new RockstarsResponse {
                     Aged = request.Age,
                     Total = db.Scalar<int>("select count(*) from Rockstar"),
                     Results = request.Id != default(int) ?
@@ -59,6 +62,14 @@ namespace RazorRockstars.WebHost
                           : request.Age.HasValue ?
                         db.Select<Rockstar>(q => q.Age == request.Age.Value)
                           : db.Select<Rockstar>()
+                };
+
+                if (request.View == null && request.Template == null)
+                    return response;
+
+                return new HttpResult(response) {
+                    View = request.View,
+                    Template = request.Template,
                 };
             }
         }

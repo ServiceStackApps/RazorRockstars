@@ -57,38 +57,122 @@
 
     <a href="http://www.servicestack.net"><img src="/img/title.png" width="475" height="132" /></a>
 
-    <h2>Introducing ServiceStack's new HTML Powers</h2>
-     <p>
-         Razor Rockstars is <a href="http://www.servicestack.net">ServiceStack's</a> demo website 
-         showcasing ServiceStack's new MVC Razor Engine support and its new web development model
-         allowing you to provide a rich HTML story whilst re-using your existing ServiceStack services.
-         This demo doesn't use any other framework apart from ServiceStack which just makes use of 
-         Razor's support (sans MVC).
-     </p>
+    <h2>ServiceStack's new HTML Powers</h2>
+    <p>
+        Razor Rockstars is <a href="http://www.servicestack.net">ServiceStack's</a> demo website 
+        created to showcase ServiceStack's new MVC Razor Engine support and its new web development 
+        model providing a rich HTML story that works seamlessly with ServiceStack's simple, fast 
+        and unified HTTP stack letting you create beautiful websites with very little effort.
+    </p>
      
-     <h3>Runs Everywhere</h3>
+     <h3>All pages includes the code and markup used to render itself</h3>
+     <p>
+         To make it easier to explore the features on this site and provide a better idea of how 
+         everything works, all pages include the gists of the source code needed to render itself. 
+     </p>
+
+    <h2>Features</h2>
+    <p>
+        We've added features beyond MVC which should work as you'd expect - in true ServiceStack style.
+    </p>
+    
+    <ul>
+        <li>
+            Runs Everywhere - In ASP.NET or Self-host, equally well on .NET / Mono platforms
+        </li>
+        <li>
+            One unified and complete Web + REST services stack.
+        </li>
+        <li>
+            Re-use your existing REST services - HTML is just another Content-Type          
+        </li>
+        <li>
+            Escape the forced Model + Controller model
+        </li>
+        <li>
+            Smart Views with powerful base classes - access your IOC dependencies in Views
+            <ul>
+                <li>Support multiple <b>.rzr</b> extensions with different base classes for each</li>
+            </ul>
+        </li>
+        <li>
+            The no Ceremony option - dynamic pages without controllers
+            <ul>
+                <li>Using typed Input View Model (aka Request DTO)</li>
+                <li>Using dynamic View Model (aka Request DTO)</li>
+            </ul>
+        </li>
+        <li>
+            Markdown Razor built-in
+        </li>
+        <li>Include Partial Markdown views in Razor pages</li>
+        <li>
+            Great run-time perforance, Optimizing for iteration times.
+        </li>
+    </ul>
+
+    <h2>Runs Everywhere</h2>
      <p>
          Like the rest of ServiceStack, you can create websites and REST services in any host on 
          any platform, i.e:
      </p>
-     <ul>
-         <li>An ASP.NET host</li>
-         <li>A Stand-alone in a self-hosted HttpListener with external views</li>
-         <li>A Stand-alone in a self-hosted HttpListener with embedded Razor views in your host.dll</li>
-         <li>On Linux with Mono, in any
-             <a href="http://stackoverflow.com/a/12188358/85785">supported ASP.NET host or self-host configuration</a>
-         </li>
-     </ul>
+    <ul>
+        <li>An ASP.NET host</li>
+        <li>A Stand-alone in a self-hosted HttpListener with external views</li>
+        <li>A Stand-alone in a self-hosted HttpListener with embedded Razor views in your host.dll</li>
+        <li>On Linux with Mono, in any
+            <a href="http://stackoverflow.com/a/12188358/85785">supported ASP.NET host or self-host configuration</a>
+        </li>
+    </ul>
+    <p>
+        Mono is becoming an increasingly important platform to target, it enables your .NET code to
+        run on more diverse operating systems and devices and allows us to provide a zero-cost 
+        software licensing scaling option letting you scale horizontally, without penalty. 
+        Mono support enables you to take advantage of the better value provided by Linux hosting 
+        providers exciting Linux-only cloud providers like 
+        <a href="http://cloud.google.com/products/compute-engine.html">Google Compute Engine</a>.
+    </p>
+    <p>
+        As we've always done, we'll continue to ensure first-class support for Mono as a core 
+        objective - evidenced by the <a href="http://www.servicestack.net">servicestack.net</a> 
+        server and all existing demos being powered by Linux / Mono since its inception, years ago.
+    </p>
+    
+    <h2>Now a complete Web + REST services stack!</h2>
+    <p>
+        This new Razor ViewEngine support now transforms ServiceStack from a robust Web Services 
+        platform to a complete web + REST services stack which you can use instead of MVC or WebApi.        
+    </p>
+    <p>
+        This is a clean-break from the layers of legacy frameworks Microsoft has added to ASP.NET over the 
+        years. We've made everything simpler by removing all layers and all existing xml-encumered 
+        ASP.NET providers and replaced them with clean, testable providers based on urls and 
+        clean POCOs all working seamlessly together.
+    </p>
+
+    <h3>The one true-unified and complete web stack</h3>
+    <p>
+        ServiceStack has 1 single, simple and unified HTTP stack. There is no duplicate or 
+        supplementary functionality that only works for HTML vs Services. Everything is simple, 
+        There is 1 set of Routes, 1 set of Request / Response filters. All of ServiceStack's 
+        plugins and providers work equally well across all servies (even in MVC / WebForms fx's).
+    </p>
+
+    <h2>Reuse your existing services</h2>
+    <p>
+        HTML support has been added just as you would expect it to exist on a REST framework, you 
+        can re-use your existing REST service implementation, where HTML is just another Content-Type. 
+        e.g. You give your existing REST services a HTML view by just adding a Razor <b>.cshtml</b> 
+        or Markdown <b>.md</b> view anywhere in the <b>/Views</b> directory with the same name as 
+        your Request or Response DTO. The benefits of this are prominent, you only have a single 
+        implementation for all your Mobile, Desktop or Web Browser clients. By default, 
+        your clean C#-only services is accessible via HTML, JSON, XML, CSV, JSON, SOAP, ProtoBuf 
+        and MQ endpoints - all with no effort.
+    </p>
      
-     <h3>All pages includes the code and markup used to render itself</h3>
+     <h2>The No Ceremony option - Web pages without Controllers</h2>
      <p>
-         To provide a better idea of how everything works, all pages include the gists of the source code 
-         needed to render itself. 
-     </p>
-     
-     <h3>The No Ceremony option - Web pages without Controllers</h3>
-     <p>
-         Many times however (especially for read-heavy pages) you don't need any Controller and can just 
+         Many times (especially for read-heavy pages) you don't need any Controller and can just 
          call your dynamic Razor (or Markdown) pages directly. ServiceStack has very good support for
          this story that lets you omit the <b class="rzr">.cshtml</b> or <b class="md">.md</b>
          page extensions and it will still execute the appropriate page with the resulting pretty urls.
