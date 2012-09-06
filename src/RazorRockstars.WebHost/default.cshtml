@@ -73,7 +73,7 @@
 
     <h2>Features</h2>
     <p>
-        We've added features beyond MVC which should work as you'd expect - in true ServiceStack style.
+        We've added features beyond MVC which should work as you'd expect, in true ServiceStack-style:
     </p>
     
     <ul>
@@ -85,14 +85,22 @@
         </li>
         <li>
             Re-use your existing REST services - HTML is just another Content-Type          
+            <ul>
+                <li>Change views and Layout templates at runtime</li>
+            </ul>
         </li>
         <li>
             Escape the forced Model + Controller model
+            <ul>
+                <li>Keep all views and their assets together</li>
+                <li>Pretty urls for dynamic pages (without custom Routes)</li>
+                <li>Default pages for directories</li>
+            </ul>
         </li>
         <li>
             Smart Views with powerful base classes - access your IOC dependencies in Views
             <ul>
-                <li>Support multiple <b>.rzr</b> extensions with different base classes for each</li>
+                <li>Support multiple base classes for different Razor .extensions</li>
             </ul>
         </li>
         <li>
@@ -103,11 +111,27 @@
             </ul>
         </li>
         <li>
-            Markdown Razor built-in
+            Support of multiple view engines
+            <ul>
+                <li>Include Partial Markdown views in Razor pages</li>
+            </ul>
         </li>
-        <li>Include Partial Markdown views in Razor pages</li>
         <li>
-            Great run-time perforance, Optimizing for iteration times.
+            Markdown Razor built-in
+            <ul>
+                <li>Maintain Content in Markdown</li>
+                <li>Build entire websites using just Markdown + static _Layout.shtml templates</li>
+            </ul>
+        </li>
+        <li>
+            Easily configure custom error pages in code.
+        </li>
+        <li>
+            Great perforance, Optimized for run-time and iteration times
+            <ul>
+                <li>Parallel compilation of Razor views</li>
+                <li>Automatic reload of modified views</li>
+            </ul>
         </li>
     </ul>
 
