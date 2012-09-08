@@ -283,6 +283,9 @@
             Provide an exception handler
             </summary>
         </member>
+        <member name="P:ServiceStack.WebHost.Endpoints.Support.HttpListenerBase.Plugins">
+            TODO: plugin added with .Add method after host initialization won't be configured. Each plugin should have state so we can invoke Register method if host was already started.  
+        </member>
         <member name="T:ServiceStack.Properties.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.

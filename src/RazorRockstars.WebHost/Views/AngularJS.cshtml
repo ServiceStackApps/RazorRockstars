@@ -9,7 +9,7 @@
 <script src="/js/jquip.events.css.ajax.min.js"></script>
 <script type="text/javascript">
     function RockstarsCtrl($scope) {
-        var response = @Model.ToJson();
+        var response = @Model.AsRawJson();
        
         $scope.rockstars = response.Results;
         

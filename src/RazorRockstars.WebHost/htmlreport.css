@@ -224,26 +224,10 @@ tfoot td {
 }
 
 /*AngularJS*/
-.alive-true {
-    background: #CFC;
-}
-.alive-false {
-    background: #FCC;
-}
-#app {
-    width: 400px;
-    margin: auto;
-}
-#app img {
-    margin: 20px 0;
-}
-#app table {
-    margin: auto;
-}
-#app h3 {
-    margin: 30px 0 15px 0;
-    text-align: center;
-}
-#app form {
-    padding: 20px;
-}
+.alive-true { background: #CFC; }
+.alive-false { background: #FCC; }
+#app { width: 400px; margin: auto; }
+#app img { margin: 20px 0; }
+#app table { margin: auto; }
+#app h3 { margin: 30px 0 15px 0; text-align: center; }
+#app form { padding: 20px; }
