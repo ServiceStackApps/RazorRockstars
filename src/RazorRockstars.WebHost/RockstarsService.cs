@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using ServiceStack.Common;
-using ServiceStack.Common.Web;
 using ServiceStack.OrmLite;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
@@ -37,7 +36,7 @@ namespace RazorRockstars.WebHost
 
         public override object OnGet(Rockstars request)
         {
-            using (var db = DbFactory.OpenDbConnection())
+            using (var db = DbFactory.Open())
             {
                 if (request.Delete == "reset")
                 {
@@ -63,7 +62,7 @@ namespace RazorRockstars.WebHost
 
         public override object OnPost(Rockstars request)
         {
-            using (var db = DbFactory.OpenDbConnection())
+            using (var db = DbFactory.Open())
             {
                 db.Insert(request.TranslateTo<Rockstar>());
                 return OnGet(new Rockstars());
