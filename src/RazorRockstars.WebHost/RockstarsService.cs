@@ -5,6 +5,7 @@ using ServiceStack.Common.Web;
 using ServiceStack.OrmLite;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
+using ServiceStack.Text;
 
 namespace RazorRockstars.WebHost
 {
@@ -24,15 +25,11 @@ namespace RazorRockstars.WebHost
         public string Template { get; set; }
     }
 
-    //DataContract attributes required by CSV Format to detect DTOs and only serialize List
-    [DataContract]
+    [Csv(CsvBehavior.FirstEnumerable)]
     public class RockstarsResponse
     {
-        [DataMember]
         public int Total { get; set; }
-        [DataMember]
         public int? Aged { get; set; }
-        [DataMember]
         public List<Rockstar> Results { get; set; }
     }
 
