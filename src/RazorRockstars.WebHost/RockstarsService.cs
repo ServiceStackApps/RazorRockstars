@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
 using ServiceStack.Common;
 using ServiceStack.Common.Web;
 using ServiceStack.OrmLite;
@@ -21,8 +20,6 @@ namespace RazorRockstars.WebHost
         public int? Age { get; set; }
         public bool Alive { get; set; }
         public string Delete { get; set; }
-        public string View { get; set; }
-        public string Template { get; set; }
     }
 
     [Csv(CsvBehavior.FirstEnumerable)]
@@ -33,6 +30,7 @@ namespace RazorRockstars.WebHost
         public List<Rockstar> Results { get; set; }
     }
 
+    [UserCanSwapTemplates]
     public class RockstarsService : RestServiceBase<Rockstars>
     {
         public IDbConnectionFactory DbFactory { get; set; }
@@ -51,7 +49,7 @@ namespace RazorRockstars.WebHost
                     db.DeleteById<Rockstar>(request.Delete.ToInt());
                 }
 
-                var response = new RockstarsResponse {
+                return new RockstarsResponse {
                     Aged = request.Age,
                     Total = db.Scalar<int>("select count(*) from Rockstar"),
                     Results = request.Id != default(int) ?
@@ -59,14 +57,6 @@ namespace RazorRockstars.WebHost
                           : request.Age.HasValue ?
                         db.Select<Rockstar>(q => q.Age == request.Age.Value)
                           : db.Select<Rockstar>()
-                };
-
-                if (request.View == null && request.Template == null)
-                    return response;
-
-                return new HttpResult(response) {
-                    View = request.View,
-                    Template = request.Template,
                 };
             }
         }
