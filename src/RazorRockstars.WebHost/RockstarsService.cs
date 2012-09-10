@@ -29,7 +29,7 @@ namespace RazorRockstars.WebHost
         public List<Rockstar> Results { get; set; }
     }
 
-    [UserCanSwapTemplates]
+    [ClientCanSwapTemplates]
     public class RockstarsService : RestServiceBase<Rockstars>
     {
         public IDbConnectionFactory DbFactory { get; set; }

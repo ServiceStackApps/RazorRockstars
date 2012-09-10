@@ -384,12 +384,12 @@
         You can also let the client change what View and Template gets used by 
         <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs#L32">attrubuting your service</a> 
         with the 
-        <a href="https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/UserCanSwapTemplatesAttribute.cs">[UserCanSwapTemplates]</a> 
+        <a href="https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/ClientCanSwapTemplatesAttribute.cs">[ClientCanSwapTemplates]</a> 
         Filter:
     </p>
 
     <pre><code>
-    [UserCanSwapTemplates]
+    [ClientCanSwapTemplates]
     public class RockstarsService : RestServiceBase<Rockstars> { ... }
     </code></pre>
     
