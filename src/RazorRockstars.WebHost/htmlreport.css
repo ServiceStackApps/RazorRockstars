@@ -222,6 +222,14 @@ tfoot td {
     display: inline-block;
     width: 100px;
 }
+.clear {
+    display: block;
+    clear: both;
+    font-size: 1px;
+}
+
+#swap-templates { margin: 5px 0 0 15px; }
+#swap-templates a { display:block; line-height:20px; }
 
 /*AngularJS*/
 .alive-true { background: #CFC; }
