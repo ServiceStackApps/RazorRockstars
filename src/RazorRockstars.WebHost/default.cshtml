@@ -502,17 +502,15 @@
     <h2>Smart View Pages</h2>
         
     <p>
-        One of the features Controllers have is the ability to inspect the incoming request. 
-        In Services, ServiceStack takes care of the Request Binding for you and will automatically populate your Request 
-        DTO based upon the HTTP Request Params.
-        When calling pages directly (i.e. without Controllers) there are still a few ways to access the 
-        incoming HTTP Request data:
+        One features Controllers have is the ability to inspect the incoming request. 
+        Inside Services, ServiceStack takes care of Request Binding and automatically populates your Request DTO based upon the HTTP Request Params.
+        When calling pages directly (i.e. without Controllers) there are still a few ways to access the incoming HTTP Request data:
     </p>
 
     <h3>Pages with typed View Models</h3>    
     <p>
-        In the same way ServiceStack binds the Request DTO in Services, you can have it populate your View model by 
-        inheriting from the Generic ViewPage as base class as done in 
+        In the same way ServiceStack populates the Request DTO in Services, it will auto populate your View model by in Views when
+        inheriting from the Generic <b>ViewPage&lt;&gt;</b> as base class as seen in 
         <a href="/TypedModelNoController">/TypedModelNoController</a>:
     </p>
 
@@ -520,12 +518,12 @@
     @@inherits ViewPage&lt;Rockstars&gt;
     </code></pre>
     
-    <p>Resulting in the typed <b>@@Model</b> being populated from the Request params</p>
+    <p>This will result in the typed <b>@@Model</b> being populated from the HTTP Request params</p>
 
     <h3>Pages with dynamic View Models</h3>
     <p>
-        Whilst the above solution requires an existing Request DTO / Input Model to exist, you also have the option 
-        of no View Model by inheriting the non-Generic ViewPage as done in 
+        The above solution requires an existing typed Request DTO / Input Model.
+        There's also the option of not requiring a View Model when inheriting from the non-Generic <b>ViewPage</b> as seen in 
         <a href="/NoModelNoController">/NoModelNoController</a>:
     </p>
 
@@ -534,10 +532,11 @@
     </code></pre>
     
     <p>
-        This will Result in a DynamicObject <b>@@Model</b> where each dynamic access is delegates to <b>IHttpRequest.GetParams()</b> 
+        In this case <b>@@Model</b> is a DynamicObject where each dynamic access is delegated to <b>IHttpRequest.GetParams()</b> 
         which looks for each param in the Request's QueryString, FormData, Cookies and Items.
     </p>
     
+    <h4>Access Request / Response properties in Views</h4>
     <p>
         In addition to the @@Model property, each View also has access to <b>base.Request</b> / <b>base.Response</b> 
         properties for more fine-grained access to ServiceStack's 
@@ -549,7 +548,7 @@
     <h3>Access IOC dependencies directly in Views</h3>
     
     <p>
-        For dynamic views to fullfill the roles of Controllers they need to be smart, which is why we've enabled 
+        For dynamic views to also fullfill the roles of Controllers they need to be smart, which is why we've enabled 
         views the ability to resolve your registered IOC dependencies with:
     </p>
 
@@ -565,7 +564,11 @@
     </p>
     
     <p>
-        This makes it trivial to do common tasks like access simple database queries using Typed Request Models with:
+        Many Micro ORMs like (
+        <a href="https://github.com/ServiceStack/ServiceStack.OrmLite/">OrmLite</a> and 
+        <a href="http://code.google.com/p/dapper-dot-net">Dapper</a>)
+        provide extension methods on ADO.NET's IDbConnection making it trivial to perform common db tasks. 
+        Here's an example of filtering the results of the Rockstar table with a typed Request Param:
     </p>
     
     <pre><code>
@@ -588,7 +591,8 @@
 
     <p>
         This will tell ServiceStack's RazorFormat to also scan for files ending with <b>.myrzr</b> and instantiate them 
-        with the base class of <b>MyCustomViewPage&lt;&gt;</b>.
+        with the base class of <b>MyCustomViewPage&lt;&gt;</b>. By default ServiceStack looks for Razor views with either 
+        <b>.cshtml</b> or <b>.rzr</b> extensions. Only views with <b>.cshtml</b> get VS.NET's Razor intelli-sense.
     </p>
 
     <h3>Easily configure custom error pages in code</h3>
@@ -615,22 +619,34 @@
     
     <p>
         This rule tells ServiceStack to execute the <b>/notfound</b> Razor page for all 404 requests. 
-        The Razor handler you reference can be any dynamic razor page (i.e. not just a static html page) 
-        which is extremely useful for Single Page Apps taking advantage of the DOMs history.pushState().
+        The page referenced by Razor handler can be any dynamic razor page (i.e. not just a static html page) - 
+        which is extremely useful for Single Page Apps taking advantage of the DOM's history.pushState().
     </p>
 
-    <h1>Still Developing... (almost there!)</h1>
-    
     <h2>Markdown built-in</h2>
+    <p>
+        Another templating language we're especially fond of is <a href="http://daringfireball.net/projects/markdown/">Markdown</a>. 
+        Although as the name suggests it's more of a "Mark Down" language since it is able to express common HTML elements used for structuring content down into a simple syntax you may conventionally see published in a ascii-only environment, like plain-text email. 
+    </p>
+
     <h3>Maintain Content in Markdown (ideal for Content)</h3>
+    <p>
+        Markdown's overriding design goal is to be as humanly readable and writeable as possible making markdown text still readable when published as-is and writeable without a HTML designer, in any text editor. These properties make Markdown the choice language to capture and maintain user content as done in many popular sites including
+        <a href="http://stackoverflow.com">StackOverflow</a> and <a href="https://github.com">GitHub</a>.
+    </p>
+
     <h3>Include Partial Markdown views in Razor pages</h3>
+    
     <h3>Build entire website pages using just Markdown Razor + static _Layout.shtml templates</h3>
+    
     <h3>Provide access to 'Markdown only' content</h3>
 
     <h2>Optimized for developer productivity</h2>
     <h3>Parallel compilation of Razor views at startup (in Debug mode)</h3>
     <h3>Automatic reload of modified views, layout templates and partials (in Debug mode)</h3>
     <h3>Great perforance, Optimized for run-time and iteration times</h3>
+
+    <h1>Still Developing... (almost there!)</h1>    
 
     <b class="clear"></b>
 </div>
