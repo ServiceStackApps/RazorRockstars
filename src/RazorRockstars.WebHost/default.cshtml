@@ -201,9 +201,16 @@
         <li>
             <a href="#optimized-for-dev">Optimized for developer productivity</a>            
             <ul>
+                <li>Great perforance, Optimized for run-time and iteration times</li>        
                 <li>Parallel compilation of Razor views at startup (in Debug mode)</li>
                 <li>Automatic reload of modified views, layout templates and partials (in Debug mode)</li>
-                <li>Great perforance, Optimized for run-time and iteration times</li>        
+            </ul>
+        </li>
+        <li>
+            <a href="#future">Future developer productivity enhancements</a>            
+            <ul>
+                <li>Optimizing for Single Page Apps</li>
+                <li>Hybrid Dynamic Web + Typed Services Stack - Best of both worlds</li>
             </ul>
         </li>
     </ul>
@@ -626,28 +633,155 @@
     <h2>Markdown built-in</h2>
     <p>
         Another templating language we're especially fond of is <a href="http://daringfireball.net/projects/markdown/">Markdown</a>. 
-        Although as the name suggests it's more of a "Mark Down" language since it is able to express common HTML elements used for structuring content down into a simple syntax you may conventionally see published in a ascii-only environment, like plain-text email. 
+        Although as the name suggests it's more of a <b>Mark Down language</b> since it's able to express commonly used HTML elements 
+        used for structuring content down into a simple syntax you may conventionally see published in ascii-only environments 
+        like plain-text email. 
     </p>
 
     <h3>Maintain Content in Markdown (ideal for Content)</h3>
     <p>
-        Markdown's overriding design goal is to be as humanly readable and writeable as possible making markdown text still readable when published as-is and writeable without a HTML designer, in any text editor. These properties make Markdown the choice language to capture and maintain user content as done in many popular sites including
-        <a href="http://stackoverflow.com">StackOverflow</a> and <a href="https://github.com">GitHub</a>.
+        Markdown's overriding design goal is to be as human readable as possible where markdown text published on its own is still 
+        readable as-is and can be easily written in any text editor, without the need for any Visual HTML designer. 
+        These properties make Markdown the choice language to capture and maintain user content as done in many popular sites 
+        including <a href="http://stackoverflow.com">StackOverflow</a> and <a href="https://github.com">GitHub</a>.
     </p>
 
     <h3>Include Partial Markdown views in Razor pages</h3>
+    <p>
+        We loved Markdown and Razor so much that included in ServiceStack is an enhanced version of Markdown with Razor functionality 
+        and Syntax called <a href="http://www.servicestack.net/docs/markdown/markdown-razor">Markdown Razor</a> which should be
+        instantly familiar to existing Razor users. 
+    </p>
     
+    <p>
+        As we expect Razor + Markdown to be an increasingly popular combination we've extend <b>@@Html.Partial()</b> support to
+        also embed Partials from different View Engines. This feature lets you embed any Markdown Page as we've done in 
+        each of the <a href="/stars/alive/cobain">content-heavy</a> <a href="/stars/dead/cobain">Rockstar pages</a> using the 
+        standard Razor Partial syntax:
+    </p>
+
+    <pre><code>
+    @@Html.Partial("Content")
+    </code></pre>
+    
+    <p>
+        Which tells ServiceStack to embed a Partial named <b>Content</b> inside the page at that location. 
+        First it will look for a Partial named <b>Content.cshtml</b> followed by a Partial named <b>Content.md</b> 
+        if it reaches the Markdown Razor View Engine. 
+        Initially it searches the current directory, followed by any matching Partials in the <b>/Views/Shared</b> folder.
+    </p>
+
     <h3>Build entire website pages using just Markdown Razor + static _Layout.shtml templates</h3>
-    
+    <p>
+        Despite it's simple roots, <a href="http://www.servicestack.net/docs/markdown/markdown-razor">Markdown Razor</a> is a 
+        featured View Engine capable of rendering complete websites as done with the content-heavy (ajax/pushState enhanced)
+        <a href="http://www.servicestack.net/docs/">servicestack.net/docs/</a> website - written entirely and maintained 
+        using Markdown Razor.
+    </p>
+
     <h3>Provide access to 'Markdown only' content</h3>
+    <p>
+        Having such deep control over the implementation of each View engine allows us to do interesting things like 
+        being able embed partials from different versions and allowing you to fetch the text-only Markdown version 
+        of each page by changing the format returned using the 
+        <a href="/stars/dead/cobain/Content?format=text.bare">?format=text.bare</a> query string.
+    </p>
 
     <h2>Optimized for developer productivity</h2>
-    <h3>Parallel compilation of Razor views at startup (in Debug mode)</h3>
-    <h3>Automatic reload of modified views, layout templates and partials (in Debug mode)</h3>
+    <p>
+        One of the areas where dynamic languages are holding over .NET is with fast iteration times enabling quick dev cycles. 
+        As compilation times increase with ever new page and class added to an ASP .NET Web project, the most popular dynamic languages
+        are experimenting with <b>Live Reloading</b> which lets you quickly see changes in your browser after hitting <b>Ctrl+S</b>.
+        Iteration times are one of the areas in most need of TLC in .NET and it's something we aim to optimize as much as possible 
+        without sacrificing run-time performance by maintaining both 'Debug' and a 'Release' modes. 
+        This mode is automatically inferred by ServiceStack on Start-up but is overridable with: 
+    </p>
+
+    <pre><code>
+    SetConfig(new EndpointHostConfig {
+        DebugMode = true,
+    });
+    </code></pre>
+
     <h3>Great perforance, Optimized for run-time and iteration times</h3>
+    <p>
+        MVC Razor is an extremely capable view engine with an elegant syntax, unfortunately it's very slow to compile and run where
+        this basic dynamic 
+        <a href="https://raw.github.com/ServiceStack/ServiceStack/master/tests/RazorRockstars.Console.Files/Views/RockstarsRazor.cshtml">Razor Page</a> 
+        is <a href="https://github.com/ServiceStack/ServiceStack/commit/1e7240e75e7fcae3b4b0aa77d8182fa9d8565514">
+        <b>38x times slower to compile</b> and <b>35x times slower to run</b></a> than this functionaly equivalent dynamic 
+        <a href="https://raw.github.com/ServiceStack/ServiceStack/master/tests/RazorRockstars.Console.Files/Views/RockstarsMark.md">Markdown Razor</a> page.
+        We're huge fans of the rich functionality provided by the MVC Razor Format but as 
+        <a href="https://github.com/mythz/ScalingDotNET">performance is one of the most important features</a> and 
+        iteration-times have a direct impact on developer productivity and enjoyment we're adding extra effort to speed things up where we can.
+    </p>
 
-    <h1>Still Developing... (almost there!)</h1>    
+    <h3>Parallel compilation of Razor views at startup (in Debug mode)</h3>
+    <p>
+        To start with we're deferring compilation of all MVC Razor views after POST Application_Start. Then in multiple background 
+        threads (based on the number of cores of your workstation) we proceed to compile all MVC Razor pages in Parallel, in the background. 
+    </p>
+    <p>
+        If you request a View before it has been compiled, it will jump the Queue and be compiled in the foreground on the fly.
+        For the times when the Layout Templates are unknown (i.e. haven't been registered) we wait for compilation of all pages before continuing.
+    </p>
 
+    <h3>Automatic reload of modified views, layout templates and partials (in Debug mode)</h3>
+    <p>
+        However the best way to avoid the Start-Up penalty is to avoid it. We also do this where we can where in Debug Mode
+        the selected View and their dependent partials and Layout template is checked for modifications at runtime 
+        and if it has changed the latest version of the page is loaded, re-compiled and displayed instead. The penalty for these 
+        checks is not paid in Release mode.
+    </p>
+    
+    <a name="future"></a>
+    <h2>Future developer productivity enhancements</h2>
+    <p>
+        We prefer not to have to deal with the work arounds required to speed-up MVC Razor, but as it's the de-facto view engine in 
+        VS.NET (with its built-in intelli-sense), it has become the most familiar templating language understood by .NET developers today.
+        In this environment, introducing a new view engine syntax isn't going to be a popular option. As it stands it seems our best
+        option to further improve developer productivity is to create a new version based on Markdown Razor's core to try mimic much
+        of MVC Razor's functionality with HTML instead of Markdown. This implementation has the potential to be even faster than 
+        Markdown Razor since it doesn't have to pay the Markup-to-HTML penalty.
+    </p>
+    
+    <a href="http://angularjs.org"><img src="/img/AngularJS-large.png" align="right" style="padding:10px 20px 20px 20px; width:268px;" /></a>
+    <h3>Optimizing for Single Page Apps</h3>
+    <p>
+        One way we're currently improving the situation (that ends up providing a better UX for end-users) has been focusing on making 
+        <a href="http://www.servicestack.net/100k-downloads/#spa-optimized">ServiceStack the ideal platform for Single Page Apps</a>
+        - to this end, we're already shipping many <a href="http://www.servicestack.net/100k-downloads/#spa-optimized">best-of-class features</a>. 
+        As Single Page Apps rely on client-side views to perform its rendering they escape the compilation tax. 
+        Up until this point we've been recommending using a 
+        <a href="https://github.com/ServiceStack/SocialBootstrapApi">MVC + ServiceStack hybrid template for Single Page Apps</a>.
+        With the release of MVC Razor support ServiceStack is now a complete stack and we're now able to remove the MVC dependency 
+        and will soon start shipping new Single Page App templates for the most popular client-side frameworks including 
+        <a href="http://angularjs.org">AngularJS</a> and <a href="http://backbonejs.org">Backbone.js</a>. 
+        We can now start to improve this story and add first-class support for advanced Web App features like history.pushState
+        which always has been a bit awkward to do in MVC.
+    </p>
+    
+    <a href="http://www.dartlang.org"><img src="/img/dart-logo.png" align="right" style="padding:10px 20px 10px 20px;" /></a>    
+    <h3>Hybrid Dynamic Web + Typed Services Stack - Best of both worlds</h3>
+    <p>
+        Another option we're considering is to provide a hybrid Web + Web Services approach with tight-integration between ServiceStack 
+        and one of the dynamic languages with a focus on fast iteration times and Live Reloading enabled.
+        We still believe in typed an end-to-end framework remains the 
+        <a href="https://github.com/ServiceStack/ServiceStack/wiki/Advantages-of-message-based-web-services">best long-term solution for web service APIs</a>.
+        But with the ASP.NET packaging model the way it is and the slow compilation of .NET, it's becoming increasingly hard to 
+        ignore the productivity benefits being had in other dynamic languages.
+    </p>
+    
+    <p>
+        So far Google's <a href="http://www.dartlang.org">Dart language</a> is looking like a stand-out here that should appeal 
+        to C# devs thanks to its familiar syntax. 
+        <a href="http://programmers.stackexchange.com/a/164304/14025">Dart already holds a number of advantages over JavaScript</a>        
+        and the Dart team and Chrome engineers have been working closely together to improve the integration with Dart IDE and Chrome 
+        where they're maintaining <a href="http://www.dartlang.org/dartium/">custom builds of Chrome</a> that allow debugging of 
+        native Dart from both inside Dartium and the Dart IDE. We're going to explore this story further and if it looks to provide
+        productivity benefits we'll produce a native comms pipeline between ServiceStack and the Dart VM runtime.
+    </p>
+    
     <b class="clear"></b>
 </div>
  
@@ -658,8 +792,8 @@
     <h3><b>AppHost</b> <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/AppHost.cs">/AppHost.cs</a></h3>
     <p>
         In every ServiceStack web service there is a single AppHost which contains all your 
-        services configuration and registration. Razor Rockstars AppHost is below which sets up the 
-        following things in order:                
+        services configuration and registration (in code). 
+        The source for the Razor Rockstars AppHost is below, it performs the following things in this order:
     </p>
     <ol>
         <li>Tells ServiceStack which Assemblies to scan for registering existing services</li>
