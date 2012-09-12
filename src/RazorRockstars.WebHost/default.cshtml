@@ -114,27 +114,27 @@
     <h2 style="padding-top: 220px">ServiceStack's new HTML powers - the website framework</h2>
     <p>
         Razor Rockstars is a <a href="http://www.servicestack.net">ServiceStack</a> demo website 
-        showcasing ServiceStack's new MVC Razor Engine support enriching its HTML story 
-        with multiple view engines and No Controller / No Ceremony web development options.
+        showcasing ServiceStack's new MVC Razor Engine support and its enriched HTML story 
+        with multiple view engine support and No Controller / No Ceremony development options.
         In many cases we've gone beyond what MVC provides with many new and natural features 
-        optimized for developer happiness, fast iteration times and run-time performance 
-        increasing the fun in .NET / Mono website development!
+        optimized for developer happiness, fast iteration times and run-time performance, 
+        putting the fun back into .NET / Mono web development!
     </p>
      
     <img class="preview" src="/img/markup-impl.png" width="200" height="179" align="right" alt="Source code embedded in all pages" />
     <h3>All pages includes the code and markup used to render itself</h3>
-     <p>
-         To make it easier to explore features on this website and provide a better idea of how 
-         everything works, all pages include the gists of the source code used to render itself. 
-         Source code for this entire website is in the 
-         <a href="https://github.com/ServiceStack/RazorRockstars">RazorRockstars Github project</a>.
-     </p>
+    <p>
+        To make it easier to explore all features on this site and to provide a better idea of how 
+        it all fits together, all pages include gists of the source code used to render itself. 
+        Source code for this entire website is in the 
+        <a href="https://github.com/ServiceStack/RazorRockstars">RazorRockstars Github project</a>.
+    </p>
      
-     <a name="features"></a>
+    <a name="features"></a>
     <h2>Website framework features</h2>
     <p>
         We've added features beyond MVC in true ServiceStack-style: by enhancing your existing 
-        services and working as expected from a REST service framework:
+        services, working as you'd expect from a REST service framework:
     </p>
     
     <ul id="features">
@@ -217,10 +217,9 @@
     
     <a name="runs-everywhere"></a>
     <h2>Runs Everywhere</h2>
-     <p>
-         Like the rest of ServiceStack, you can create websites and REST services in any host on 
-         any platform, e.g:
-     </p>
+    <p>
+        Like the rest of ServiceStack, you can create websites and REST services in any host on any platform, e.g:
+    </p>
     <ul>
         <li>Any ASP.NET host</li>
         <li>A Stand-alone, self-hosted HttpListener with external views</li>
@@ -234,9 +233,8 @@
     <p>
         One of ServiceStack's core objectives is to retain an invisible API that gets out of your way.
         The ServiceStack service itself is a classic example, it's just a 
-        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs#L33">simple C# class</a> 
-        auto-wired with your registered dependencies that just accepts any user-defined Request DTO and 
-        letting you return any object which is automatically serialized into the expected Response Content-Type. 
+        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs#L33">simple C# class</a> auto-wired with your registered dependencies that accepts any user-defined Request DTO and 
+        lets you return any object which is automatically serialized into the expected Response Content-Type. 
         Re-usable functionality can be applied to all your services via 
         <a href="https://github.com/ServiceStack/ServiceStack/wiki/Request-and-response-filters">Request / Response Filters</a>, 
         <a href="https://github.com/ServiceStack/ServiceStack/wiki/Filter-attributes">Filter Attributes</a>, 
@@ -244,18 +242,19 @@
         all of which get auto-wired with your registered dependencies. Even Razor views have access to your IOC dependencies.
     </p>
     <p>
-        You retain complete control over the Request DTO, Implementation and Response - added features simply enhance your existing services and models.
-        We refer to this style as <b>starting from ideal C#, and project-out</b> and is one of the key approaches 
-        we use to promote a frictionless dev workflow, i.e. instead of having your C# code bind to a foreign 
-        API abstraction, ServiceStack builds functionality around your untainted C# classes and DTOs 
-        (unhindered by artificial APIs).
-        This makes your logic more re-usable and is how any new feature we add to the framework is 
-        immediately able to work with your existing services without any code-changes required.
+        You retain complete control over the Request DTO, Implementation and Response - added features simply enhance your existing 
+        services and models. We refer to this style as <b>starting from ideal C#, and project-out</b> and is one of the key approaches 
+        we use to promote a frictionless dev workflow, i.e. instead of having your C# code bind to a foreign API abstraction, ServiceStack builds functionality around your untainted C# classes and DTOs (unhindered by artificial APIs). 
+        This makes your logic more re-usable and is how any new feature we add to the framework is immediately able to work with your 
+        existing services without any code-changes required.
+        E.g. you can throw a C# Exception and the ideal HTTP Response gets emitted, it also includes 
+        <a href="https://github.com/ServiceStack/ServiceStack/wiki/Architecture-overview">rich fluent validation</a>         
+        that supports returning typed structured error responses back to C# clients.
     </p>
     
     <h3>Include Partials from other view engines</h3>
     <p>
-        Unlike many web frameworks, ServiceStack lets you include Partial views from different registered view engines.
+        Unlike many web frameworks, ServiceStack lets you include Partial views from other registered view engines.
         This is ideal for Content heavy pages where you can use MVC Razor format for a precise layout whilst maintaining
         the content of your dynamic pages in Markdown. 
     </p>
@@ -266,9 +265,8 @@
     <a name="complete-stack"></a>
     <h2>A Complete Web + REST Services Stack</h2>
     <p>
-        The new Razor and multiple HTML ViewEngine support now transforms ServiceStack from a 
-        Web Services framework to a complete Website + REST/SOAP/MQ services stack which provides 
-        a clean replacement for MVC, WCF or WebApi.
+        The new Razor and multiple HTML ViewEngine support now transforms ServiceStack from a Web Services framework to a complete 
+        Website + REST/SOAP/MQ services stack which provides a clean replacement for MVC, WCF or WebApi.
     </p>
     <p>
         This is a clean-break from the layers of legacy frameworks that have been added to ASP.NET over the years. 
@@ -276,6 +274,7 @@
         on top of IHttpHandler's since .NET 2.0 and replaced them with clean, testable code-first providers based 
         on urls and clean POCOs - all working seamlessly together.
     </p>
+
     <h3>HTML format supports multiple pluggable view engines</h3>
     <p>
         HTML support works just as you would expect it to exist on a REST service framework - 
@@ -693,8 +692,7 @@
         As compilation times increase with ever new page and class added to an ASP .NET Web project, the most popular dynamic languages
         are experimenting with <b>Live Reloading</b> which lets you quickly see changes in your browser after hitting <b>Ctrl+S</b>.
         Iteration times are one of the areas in most need of TLC in .NET and it's something we aim to optimize as much as possible 
-        without sacrificing run-time performance by maintaining both 'Debug' and a 'Release' modes. 
-        This mode is automatically inferred by ServiceStack on Start-up but is overridable with: 
+        without sacrificing run-time performance by maintaining 2 modes: 'Debug' (Development) optimized for start times and a 'Release' (Production) mode optimized for runtime performance. This mode is automatically inferred by ServiceStack on Start-up but is overridable with: 
     </p>
 
     <pre><code>
@@ -705,40 +703,37 @@
 
     <h3>Great perforance, Optimized for run-time and iteration times</h3>
     <p>
-        MVC Razor is an extremely capable view engine with an elegant syntax, unfortunately it's very slow to compile and run where
-        this basic dynamic 
-        <a href="https://raw.github.com/ServiceStack/ServiceStack/master/tests/RazorRockstars.Console.Files/Views/RockstarsRazor.cshtml">Razor Page</a> 
-        is <a href="https://github.com/ServiceStack/ServiceStack/commit/1e7240e75e7fcae3b4b0aa77d8182fa9d8565514">
-        <b>38x times slower to compile</b> and <b>35x times slower to run</b></a> than this functionaly equivalent dynamic 
-        <a href="https://raw.github.com/ServiceStack/ServiceStack/master/tests/RazorRockstars.Console.Files/Views/RockstarsMark.md">Markdown Razor</a> page.
-        We're huge fans of the rich functionality provided by the MVC Razor Format but as 
-        <a href="https://github.com/mythz/ScalingDotNET">performance is one of the most important features</a> and 
-        iteration-times have a direct impact on developer productivity and enjoyment we're adding extra effort to speed things up where we can.
+        MVC Razor is an extremely capable view engine with an elegant syntax, unfortunately it's quite slow to compile where
+        by comparison this basic 
+        <a href="https://raw.github.com/ServiceStack/ServiceStack/master/tests/RazorRockstars.Console.Files/Views/RockstarsRazor.cshtml">Razor Page</a> is <a href="https://github.com/ServiceStack/ServiceStack/commit/1e7240e75e7fcae3b4b0aa77d8182fa9d8565514">
+        <b>38x times slower to compile</b> whilst being <b>1.76x times faster to run</b></a> than the functionaly equivalent 
+        <a href="https://raw.github.com/ServiceStack/ServiceStack/master/tests/RazorRockstars.Console.Files/Views/RockstarsMark.md">Markdown Razor</a> page. We're huge fans of the rich functionality provided by MVC Razor Format and we also agree  
+        <a href="https://github.com/mythz/ScalingDotNET">performance is one of the most important features</a> but iteration-times also 
+        matters as it has a direct impact on developer productivity and we believe should be given more prominance over 
+        micro-optimizations with large start-up costs as any perf benefits gained can be marginalized behind a good caching strategy. 
+        We're developing with this balance in mind and are continually looking to improve start-up times where possible (in DebugMode).
     </p>
 
     <h3>Parallel compilation of Razor views at startup (in Debug mode)</h3>
     <p>
-        To start with we're deferring compilation of all MVC Razor views after POST Application_Start. Then in multiple background 
-        threads (based on the number of cores of your workstation) we proceed to compile all MVC Razor pages in Parallel, in the background. 
+        To start with we're deferring compilation of all MVC Razor views onto a work queue which gets processed by multiple background threads (based on the number of cores) in parallel after Application_Start. 
     </p>
     <p>
-        If you request a View before it has been compiled, it will jump the Queue and be compiled in the foreground on the fly.
-        For the times when the Layout Templates are unknown (i.e. haven't been registered) we wait for compilation of all pages before continuing.
+        If a View is requested before it's been compiled, it jumps the Queue and gets compiled on the fly in the foreground.
+        For times when the Layout Template is unknown (i.e. has't been registered) we wait for compilation of all pages before continuing.
     </p>
 
     <h3>Automatic reload of modified views, layout templates and partials (in Debug mode)</h3>
     <p>
-        However the best way to avoid the Start-Up penalty is to avoid it. We also do this where we can where in Debug Mode
-        the selected View and their dependent partials and Layout template is checked for modifications at runtime 
-        and if it has changed the latest version of the page is loaded, re-compiled and displayed instead. The penalty for these 
-        checks is not paid in Release mode.
+        However the best way to avoid the Start-Up penalty is to avoid having to restart the AppDomain in the first place. So in Debug Mode 
+        we'll also do this where the requested View, it's partials and Layout template is checked for modifications and auto-reloaded 
+        on the fly before rendering. The penalty for these checks is not paid in Release (production) mode.
     </p>
     
     <a name="future"></a>
     <h2>Future developer productivity enhancements</h2>
     <p>
-        We prefer not to have to deal with the work arounds required to speed-up MVC Razor, but as it's the de-facto view engine in 
-        VS.NET (with its built-in intelli-sense), it has become the most familiar templating language understood by .NET developers today.
+        We prefer not to have to deal with these work arounds, but as Razor the de-facto view engine in VS.NET (with its built-in intelli-sense), it has become the most familiar templating language understood by .NET developers today.
         In this environment, introducing a new view engine syntax isn't going to be a popular option. As it stands it seems our best
         option to further improve developer productivity is to create a new version based on Markdown Razor's core to try mimic much
         of MVC Razor's functionality with HTML instead of Markdown. This implementation has the potential to be even faster than 
@@ -751,14 +746,18 @@
         One way we're currently improving the situation (that ends up providing a better UX for end-users) has been focusing on making 
         <a href="http://www.servicestack.net/100k-downloads/#spa-optimized">ServiceStack the ideal platform for Single Page Apps</a>
         - to this end, we're already shipping many <a href="http://www.servicestack.net/100k-downloads/#spa-optimized">best-of-class features</a>. 
-        As Single Page Apps rely on client-side views to perform its rendering they escape the compilation tax. 
+        As Single Page Apps rely on client-side views to perform its rendering they escape the compilation tax - JetBrains gives you a peak
+        of the <a href="http://www.youtube.com/watch?v=wCVwdvufTds&feature=youtu.be">Live Editing</a> development experience possible with
+        the AngularJS client-side framework. 
+    </p>
+    <p>
         Up until this point we've been recommending using a 
         <a href="https://github.com/ServiceStack/SocialBootstrapApi">MVC + ServiceStack hybrid template for Single Page Apps</a>.
-        With the release of MVC Razor support ServiceStack is now a complete stack and we're now able to remove the MVC dependency 
-        and will soon start shipping new Single Page App templates for the most popular client-side frameworks including 
-        <a href="http://angularjs.org">AngularJS</a> and <a href="http://backbonejs.org">Backbone.js</a>. 
-        We can now start to improve this story and add first-class support for advanced Web App features like history.pushState
-        which always has been a bit awkward to do in MVC.
+        With this release of MVC Razor support, ServiceStack is now a complete stack and we're able to simplify the stack by removing 
+        the dependency on MVC and will begin shipping new Single Page App templates for the most popular client-side frameworks, with:  
+        <a href="http://angularjs.org">AngularJS</a> and <a href="http://backbonejs.org">Backbone.js</a> planned for initially. 
+        We'll continue to improve this story and ensure first-class support for advanced Web App features like history.pushState(),
+        which has always been a bit awkward to do in MVC.
     </p>
     
     <a href="http://www.dartlang.org"><img src="/img/dart-logo.png" align="right" style="padding:10px 20px 10px 20px;" /></a>    
@@ -767,21 +766,22 @@
         Another option we're considering is to provide a hybrid Web + Web Services approach with tight-integration between ServiceStack 
         and one of the dynamic languages with a focus on fast iteration times and Live Reloading enabled.
         We still believe in typed an end-to-end framework remains the 
-        <a href="https://github.com/ServiceStack/ServiceStack/wiki/Advantages-of-message-based-web-services">best long-term solution for web service APIs</a>.
-        But with the ASP.NET packaging model the way it is and the slow compilation of .NET, it's becoming increasingly hard to 
+        <a href="https://github.com/ServiceStack/ServiceStack/wiki/Advantages-of-message-based-web-services">best long-term solution for web services</a>.
+        But with the ASP.NET packaging model the way it is and the slow compilation times of .NET, it's becoming increasingly hard to 
         ignore the productivity benefits being had in other dynamic languages.
     </p>
     
     <p>
-        So far Google's <a href="http://www.dartlang.org">Dart language</a> is looking like a stand-out here that should appeal 
-        to C# devs thanks to its familiar syntax. 
+        So far Google's new language for the web <a href="http://www.dartlang.org">Dart</a> is looking like a stand-out here that should appeal to C# devs thanks to its familiar syntax (like it because it supports the same platforms ServiceStack does :). 
         <a href="http://programmers.stackexchange.com/a/164304/14025">Dart already holds a number of advantages over JavaScript</a>        
-        and the Dart team and Chrome engineers have been working closely together to improve the integration with Dart IDE and Chrome 
-        where they're maintaining <a href="http://www.dartlang.org/dartium/">custom builds of Chrome</a> that allow debugging of 
+        and the Dart team and Chrome engineers have been working closely together to improve the integration between Dart IDE and Chrome 
+        where they're actively releasing <a href="http://www.dartlang.org/dartium/">new custom builds of Chrome</a> that allow debugging of 
         native Dart from both inside Dartium and the Dart IDE. We're going to explore this story further and if it looks to provide
-        productivity benefits we'll produce a native comms pipeline between ServiceStack and the Dart VM runtime.
+        productivity benefits we'll produce a fast native comms pipeline between ServiceStack and the Dart VM runtime. 
+        We already have great HTTP integration with ServiceStack with one of the most fluent, intuitive API's you're likely to see in a 
+        <a href="https://github.com/mythz/DartJsonClient">Json Client</a>.
     </p>
-    
+
     <b class="clear"></b>
 </div>
  
