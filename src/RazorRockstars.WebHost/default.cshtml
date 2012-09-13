@@ -134,7 +134,7 @@
     <h2>Website framework features</h2>
     <p>
         We've added features beyond MVC in true ServiceStack-style: by enhancing your existing 
-        services, working as you'd expect from a REST service framework:
+        services, working as you'd expect it to in a REST service framework:
     </p>
     
     <ul id="features">
@@ -241,7 +241,7 @@
         The ServiceStack service itself is a classic example, it's just a 
         <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs#L33">simple C# class</a> auto-wired with your registered dependencies that accepts any user-defined Request DTO and 
         lets you return any object which is automatically serialized into the expected Response Content-Type. 
-        Re-usable functionality can be applied to all your services via 
+        Composable and re-usable functionality can be applied to all your services via 
         <a href="https://github.com/ServiceStack/ServiceStack/wiki/Request-and-response-filters">Request / Response Filters</a>, 
         <a href="https://github.com/ServiceStack/ServiceStack/wiki/Filter-attributes">Filter Attributes</a>, 
         <a href="https://github.com/ServiceStack/ServiceStack/wiki/Validation">Validators</a> or by extending a common base class -
@@ -249,11 +249,11 @@
     </p>
     <p>
         You retain complete control over the Request DTO, Implementation and Response - added features simply enhance your existing 
-        services and models. We refer to this style as <b>starting from ideal C#, and project-out</b> and is one of the key approaches 
+        models and services. We refer to this style as <b>starting from ideal C#, and project-out</b> and is one of the key approaches 
         we use to promote a frictionless dev workflow, i.e. instead of having your C# code bind to a foreign API abstraction, ServiceStack builds functionality around your untainted C# classes and DTOs (unhindered by artificial APIs). 
         This makes your logic more re-usable and is how any new feature we add to the framework is immediately able to work with your 
         existing services without any code-changes required.
-        E.g. you can throw a C# Exception and the ideal HTTP Response gets emitted, it also includes 
+        E.g. you can code as you would normally and throw C# Exceptions and the ideal HTTP Response gets emitted, you also have access to 
         <a href="https://github.com/ServiceStack/ServiceStack/wiki/Architecture-overview">rich fluent validation</a>         
         that supports returning typed structured error responses back to C# clients.
     </p>
