@@ -1,6 +1,8 @@
 ﻿using System.Net;
 using Funq;
 using ServiceStack.DataAnnotations;
+using ServiceStack.Logging;
+using ServiceStack.Logging.Support.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
 using ServiceStack.Text;
@@ -15,6 +17,8 @@ namespace RazorRockstars.WebHost
 
         public override void Configure(Container container)
         {
+            LogManager.LogFactory = new ConsoleLogFactory();
+
             Plugins.Add(new RazorFormat());
 
             container.Register<IDbConnectionFactory>(
