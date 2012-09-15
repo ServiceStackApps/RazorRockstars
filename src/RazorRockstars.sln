@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.SelfHost", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.WebHost", "RazorRockstars.WebHost\RazorRockstars.WebHost.csproj", "{1CEFE4A6-3845-436F-A393-505683658521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.WinService", "RazorRockstars.WinService\RazorRockstars.WinService\RazorRockstars.WinService.csproj", "{36031A25-3414-44F8-9ABC-D961BCB983D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.WinService", "RazorRockstars.WinService\RazorRockstars.WinService.csproj", "{36031A25-3414-44F8-9ABC-D961BCB983D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

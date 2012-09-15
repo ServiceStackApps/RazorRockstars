@@ -94,6 +94,20 @@
         width: 400px;
         display: inline-block;        
     }
+    .nuget-badge code {
+        background-color: #202020;
+        border: 4px solid #c0c0c0;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        box-shadow: 2px 2px 3px #6e6e6e;
+        color: #e2e2e2;
+        display:block;
+        font: 1.5em 'andale mono', 'lucida console', monospace; 
+        line-height: 1.5em;
+        overflow: auto;
+        padding: 15px; 
+    }
 </style>
 <div id="page">
       
@@ -120,6 +134,26 @@
         optimized for developer happiness, fast iteration times and run-time performance, 
         putting the fun back into .NET / Mono web development!
     </p>
+    
+    <a name="install"></a>
+    <h2>Install via NuGet</h2>
+    <p>
+        The MVC Razor ViewEngine is an optional .NET 4.0 plugin that can be installed via NuGet:
+    </p>
+    
+    <div class="nuget-badge">
+        <p>
+            <code>PM&gt; Install-Package ServiceStack.Razor</code>
+        </p>
+    </div>    
+
+    <p>    
+       When Installed you can enable the MVC Razor feature in any .NET 4.0 AppHost with:
+    </p>
+    
+    <pre><code>
+    Plugins.Add(new RazorFormat());
+    </code></pre>
      
     <img class="preview" src="/img/markup-impl.png" width="200" height="179" align="right" alt="Source code embedded in all pages" />
     <h3>All pages includes the code and markup used to render itself</h3>
@@ -129,7 +163,7 @@
         Source code for this entire website is in the 
         <a href="https://github.com/ServiceStack/RazorRockstars">RazorRockstars Github project</a>.
     </p>
-     
+    
     <a name="features"></a>
     <h2>Website framework features</h2>
     <p>
@@ -293,13 +327,9 @@
     <p>
         ServiceStack supports multiple view engines out-of-the-box: By default 
         <a href="https://github.com/ServiceStack/ServiceStack/wiki/HTML5ReportFormat">HtmlReport</a> and 
-        <a href="https://github.com/ServiceStack/ServiceStack/wiki/Markdown-Razor">Markdown Razor</a>
-        is pre-registered. Whilst you can add MVC Razor support in any .NET 4.0 host with:
+        <a href="https://github.com/ServiceStack/ServiceStack/wiki/Markdown-Razor">Markdown Razor</a> 
+        is pre-registered, whilst Razor support can be <a href="#install">installed via NuGet</a>.
     </p>
-    
-    <pre><code>
-    Plugins.Add(new RazorFormat());
-    </code></pre>
 
     <p>
         When the client requests HTML Content-Type, ServiceStack will cycle through all registered view engines 

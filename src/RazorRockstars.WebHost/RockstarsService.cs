@@ -41,7 +41,7 @@ namespace RazorRockstars.WebHost
                 if (request.Delete == "reset")
                 {
                     db.DeleteAll<Rockstar>();
-                    db.InsertAll(Rockstar.SeedData);
+                    db.InsertAll(AppHost.SeedData);
                 }
                 else if (request.Delete.IsInt())
                 {
