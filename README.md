@@ -8,6 +8,13 @@ its HTML story with multiple view engines and No Controller / No Ceremony web de
 In many cases we've gone beyond what MVC provides with many new and natural features optimized for developer 
 happiness, fast iteration times and run-time performance putting the fun back into .NET / Mono web development!
 
+This project includes multiple configurations of the Razor Rockstars website in the different supported hosts:
+
+  - [ASP.NET Host](https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.WebHost) - live demo at [razor.servicestack.net](http://razor.servicestack.net)
+  - [Standalone Self Host](https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.SelfHost) - live demo at [razor-console.servicestack.net](http://razor-console.servicestack.net)
+  - [Standalone Windows Service](https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.WinService)
+
+
 ### Home Page 
 ![Home Page](http://www.servicestack.net/files/rockstars-01.png)
 
