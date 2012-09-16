@@ -1,6 +1,6 @@
 ﻿namespace RazorRockstars.WinService
 {
-    partial class Service1
+    partial class WinService
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            // 
+            // WinService
+            // 
+            this.ServiceName = "Rockstars WinService";
+
         }
 
         #endregion

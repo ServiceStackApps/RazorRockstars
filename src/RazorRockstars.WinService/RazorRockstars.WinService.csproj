@@ -101,11 +101,11 @@
   <ItemGroup>
     <Compile Include="AppHost.cs" />
     <Compile Include="RockstarsService.cs" />
-    <Compile Include="Service1.cs">
+    <Compile Include="WinService.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Service1.Designer.cs">
-      <DependentUpon>Service1.cs</DependentUpon>
+    <Compile Include="WinService.Designer.cs">
+      <DependentUpon>WinService.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +115,7 @@
     <None Include="default.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="install.bat" />
     <None Include="NoModelNoController.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -185,15 +186,34 @@
     <None Include="TypedModelNoController.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Views\AngularJS.cshtml" />
-    <None Include="Views\Rockstars.cshtml" />
-    <None Include="Views\Shared\Empty.cshtml" />
-    <None Include="Views\Shared\HtmlReport.cshtml" />
-    <None Include="Views\Shared\MenuAlive.cshtml" />
-    <None Include="Views\Shared\MenuDead.cshtml" />
-    <None Include="Views\Shared\OtherPages.cshtml" />
-    <None Include="Views\Shared\SimpleLayout.cshtml" />
-    <None Include="Views\_Layout.cshtml" />
+    <None Include="uninstall.bat" />
+    <None Include="Views\AngularJS.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Rockstars.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Shared\Empty.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Shared\HtmlReport.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Shared\MenuAlive.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Shared\MenuDead.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Shared\OtherPages.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Shared\SimpleLayout.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\_Layout.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -309,6 +329,11 @@
     <Content Include="stars\style.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WinService.resx">
+      <DependentUpon>WinService.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
