@@ -39,7 +39,7 @@ namespace RazorRockstars.SelfHost
             using (var db = container.Resolve<IDbConnectionFactory>().OpenDbConnection())
             {
                 db.CreateTableIfNotExists<Rockstar>();
-                db.InsertAll<Rockstar>(SeedData);
+                db.InsertAll(SeedData);
             }
 
             SetConfig(new EndpointHostConfig {

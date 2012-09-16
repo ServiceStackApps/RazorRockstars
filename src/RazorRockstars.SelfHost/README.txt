@@ -1,0 +1,2 @@
+﻿To enable VS.NET intelli-sense for Razor View Pages create a copy of App.config and save as Web.config.
+Only App.config is used at run-time, Web.config just provides metadata for VS.NET's intelli-sense.

@@ -110,6 +110,11 @@
     }
 </style>
 <div id="page">
+  	<a href="http://github.com/ServiceStack/RazorRockstars/">
+		<img style="position:absolute;top:0;right:0;border:0;z-index:1031" 
+			 src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" 
+             alt="Fork me on GitHub">
+	</a>  
       
      <div id="visual-sitemap">
          <a class="dead" href="/stars/dead/cobain"><img src="/img/thumb-05.jpg" /></a>
@@ -721,7 +726,7 @@
     <h3>Provide access to 'Markdown only' content</h3>
     <p>
         Having such deep control over the implementation of each View engine allows us to do interesting things like 
-        being able embed partials from different versions and allowing you to fetch the text-only Markdown version 
+        being able embed partials from different view engines and allowing you to fetch the text-only Markdown version 
         of each page by changing the format returned using the 
         <a href="/stars/dead/cobain/Content?format=text.bare">?format=text.bare</a> query string.
     </p>
@@ -766,7 +771,7 @@
     </p>
     <p>
         If a View is requested before it's been compiled, it jumps the Queue and gets compiled on the fly in the foreground.
-        For times when the Layout Template is unknown (i.e. has't been registered) we wait for compilation of all pages before continuing.
+        For times when the Layout Template is unknown (i.e. hasn't been registered) we wait for compilation of all pages before continuing.
     </p>
 
     <h3>Automatic reload of modified views, layout templates and partials (in Debug mode)</h3>
