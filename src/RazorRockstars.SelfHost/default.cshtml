@@ -110,6 +110,11 @@
     }
 </style>
 <div id="page">
+  	<a href="http://github.com/ServiceStack/RazorRockstars/">
+		<img style="position:absolute;top:0;right:0;border:0;z-index:1031" 
+			 src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" 
+             alt="Fork me on GitHub">
+	</a>  
       
      <div id="visual-sitemap">
          <a class="dead" href="/stars/dead/cobain"><img src="/img/thumb-05.jpg" /></a>
@@ -136,9 +141,12 @@
     </p>
     
     <a name="install"></a>
-    <h2>Install via NuGet</h2>
+    <h2>Install via NuGet</h2>  
     <p>
-        The MVC Razor ViewEngine is an optional .NET 4.0 plugin that can be installed via NuGet:
+        ServiceStack's Razor ViewEngine is an <b>optional .NET 4.0 add-on</b> that's self-contained 
+        within the
+        <a href="https://github.com/ServiceStack/ServiceStack/wiki/Plugins">RazorFormat plugin</a>
+        which can be easily added to any <b>empty ASP.NET or Console Application</b> project via NuGet with:
     </p>
     
     <div class="nuget-badge">
@@ -148,7 +156,7 @@
     </div>    
 
     <p>    
-       When Installed you can enable MVC Razor feature in any .NET 4.0 AppHost with:
+        Once added to your project, opt-in to enable the Razor feature in your AppHost with:
     </p>
     
     <pre><code>
@@ -258,13 +266,39 @@
         <li>Any ASP.NET host</li>
         <li>A Stand-alone, self-hosted HttpListener with external views</li>
         <li>A Stand-alone, self-hosted HttpListener with embedded Razor views in your ConsoleHost.exe</li>
+        <li>A Stand-alone Windows Service</li>
         <li><a href="http://stackoverflow.com/a/12188358/85785">All the above on Linux with Mono</a></li>
     </ul>
+   
+    <h3>Live ASP.NET and Self-Hosting demos</h3>
+    <ul class="urls">
+        <li>
+            <a href="http://razor.servicestack.net">razor.servicestack.net</a>
+            ASP.NET Hosted live demo powered by Linux / Nginx / MonoFastCGI
+        </li>
+        <li>
+            <a href="http://razor-console.servicestack.net">razor-console.servicestack.net</a>
+            Self-Hosted Console Application hosted behind Nginx Reverse Proxy
+        </li>
+    </ul>
     
+    <h4>Live Demos are Developed on VS.NET and Deployed to Linux</h4>
     <p>
-        This demo, along with the rest of <a href="http://www.servicestack.net">servicestack.net</a> is running on
-        an <a href="http://www.hetzner.de/en/hosting/produkte_vserver/vq19">Ubuntu vServer</a> with 
+        All <a href="http://www.servicestack.net">servicestack.net</a> demos are developed on
+        Windows with VS.NET and are git-deployed to the same
+        <a href="http://www.hetzner.de/en/hosting/produkte_vserver/vq19">Ubuntu vServer</a> with 
         <a href="http://stackoverflow.com/a/12188358/85785">Nginx / MonoFastCGI</a>.
+    </p>
+   
+    <p>
+        Both the 
+        <a href="https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.WebHost">ASP.NET Razor Rockstars</a> 
+        and the 
+        <a href="https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.SelfHost">Self-Hosted replica</a>
+        are identical except the 
+        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.SelfHost/AppHost.cs#L14">
+            SelfHost AppHost inherits from AppHostHttpListenerBase</a> and all its assets have the build action set to <b>Copy if Newer</b>
+        so they're copied to the <b>/bin</b> directory after each build making it suitable for xcopyable deployment. 
     </p>
    
     <a name="easy"></a>
@@ -719,7 +753,7 @@
     <h3>Provide access to 'Markdown only' content</h3>
     <p>
         Having such deep control over the implementation of each View engine allows us to do interesting things like 
-        being able embed partials from different versions and allowing you to fetch the text-only Markdown version 
+        being able embed partials from different view engines and allowing you to fetch the text-only Markdown version 
         of each page by changing the format returned using the 
         <a href="/stars/dead/cobain/Content?format=text.bare">?format=text.bare</a> query string.
     </p>
@@ -764,7 +798,7 @@
     </p>
     <p>
         If a View is requested before it's been compiled, it jumps the Queue and gets compiled on the fly in the foreground.
-        For times when the Layout Template is unknown (i.e. has't been registered) we wait for compilation of all pages before continuing.
+        For times when the Layout Template is unknown (i.e. hasn't been registered) we wait for compilation of all pages before continuing.
     </p>
 
     <h3>Automatic reload of modified views, layout templates and partials (in Debug mode)</h3>

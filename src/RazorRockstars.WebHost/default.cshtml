@@ -266,13 +266,39 @@
         <li>Any ASP.NET host</li>
         <li>A Stand-alone, self-hosted HttpListener with external views</li>
         <li>A Stand-alone, self-hosted HttpListener with embedded Razor views in your ConsoleHost.exe</li>
+        <li>A Stand-alone Windows Service</li>
         <li><a href="http://stackoverflow.com/a/12188358/85785">All the above on Linux with Mono</a></li>
     </ul>
+   
+    <h3>Live ASP.NET and Self-Hosting demos</h3>
+    <ul class="urls">
+        <li>
+            <a href="http://razor.servicestack.net">razor.servicestack.net</a>
+            ASP.NET Hosted live demo powered by Linux / Nginx / MonoFastCGI
+        </li>
+        <li>
+            <a href="http://razor-console.servicestack.net">razor-console.servicestack.net</a>
+            Self-Hosted Console Application hosted behind Nginx Reverse Proxy
+        </li>
+    </ul>
     
+    <h4>Live Demos are Developed on VS.NET and Deployed to Linux</h4>
     <p>
-        This demo, along with the rest of <a href="http://www.servicestack.net">servicestack.net</a> is running on
-        an <a href="http://www.hetzner.de/en/hosting/produkte_vserver/vq19">Ubuntu vServer</a> with 
+        All <a href="http://www.servicestack.net">servicestack.net</a> demos are developed on
+        Windows with VS.NET and are git-deployed to the same
+        <a href="http://www.hetzner.de/en/hosting/produkte_vserver/vq19">Ubuntu vServer</a> with 
         <a href="http://stackoverflow.com/a/12188358/85785">Nginx / MonoFastCGI</a>.
+    </p>
+   
+    <p>
+        Both the 
+        <a href="https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.WebHost">ASP.NET Razor Rockstars</a> 
+        and the 
+        <a href="https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.SelfHost">Self-Hosted replica</a>
+        are identical except the 
+        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.SelfHost/AppHost.cs#L14">
+            SelfHost AppHost inherits from AppHostHttpListenerBase</a> and all its assets have the build action set to <b>Copy if Newer</b>
+        so they're copied to the <b>/bin</b> directory after each build making it suitable for xcopyable deployment. 
     </p>
    
     <a name="easy"></a>
