@@ -5,6 +5,7 @@ using ServiceStack.Logging;
 using ServiceStack.Logging.Support.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
+using ServiceStack.ServiceHost;
 using ServiceStack.Text;
 using ServiceStack.WebHost.Endpoints;
 
@@ -51,6 +52,7 @@ namespace RazorRockstars.WinService
     }
 
     //Poco Data Model for OrmLite + SeedData 
+    [Route("/rockstars", "POST")]
     public class Rockstar
     {
         [AutoIncrement]

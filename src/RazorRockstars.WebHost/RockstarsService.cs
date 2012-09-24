@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using ServiceStack.Common;
 using ServiceStack.OrmLite;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
@@ -9,17 +8,20 @@ namespace RazorRockstars.WebHost
 {
     [Route("/rockstars")]
     [Route("/rockstars/aged/{Age}")]
-    [Route("/rockstars/delete/{Delete}")]
-    [Route("/rockstars/{Id}")]
     public class Rockstars
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
         public int? Age { get; set; }
-        public bool Alive { get; set; }
-        public string Delete { get; set; }
+        public int Id { get; set; }
     }
+
+    [Route("/rockstars/delete/{Id}")]
+    public class DeleteRockstar
+    {
+        public int Id { get; set; }
+    }
+
+    [Route("/rockstars/delete/reset")]
+    public class ResetRockstars { }
 
     [Csv(CsvBehavior.FirstEnumerable)]
     public class RockstarsResponse
@@ -30,43 +32,40 @@ namespace RazorRockstars.WebHost
     }
 
     [ClientCanSwapTemplates]
-    public class RockstarsService : RestServiceBase<Rockstars>
+    [DefaultView("Rockstars")]
+    public class RockstarsService : Service
     {
-        public IDbConnectionFactory DbFactory { get; set; }
-
-        public override object OnGet(Rockstars request)
+        public object Get(Rockstars request)
         {
-            using (var db = DbFactory.Open())
-            {
-                if (request.Delete == "reset")
-                {
-                    db.DeleteAll<Rockstar>();
-                    db.InsertAll(AppHost.SeedData);
-                }
-                else if (request.Delete.IsInt())
-                {
-                    db.DeleteById<Rockstar>(request.Delete.ToInt());
-                }
-
-                return new RockstarsResponse {
-                    Aged = request.Age,
-                    Total = db.Scalar<int>("select count(*) from Rockstar"),
-                    Results = request.Id != default(int) ?
-                        db.Select<Rockstar>(q => q.Id == request.Id)
-                          : request.Age.HasValue ?
-                        db.Select<Rockstar>(q => q.Age == request.Age.Value)
-                          : db.Select<Rockstar>()
-                };
-            }
+            return new RockstarsResponse {
+                Aged = request.Age,
+                Total = Db.Scalar<int>("select count(*) from Rockstar"),
+                Results = request.Id != default(int) 
+                    ? Db.Select<Rockstar>(q => q.Id == request.Id)
+                    : request.Age.HasValue 
+                        ? Db.Select<Rockstar>(q => q.Age == request.Age.Value)
+                        : Db.Select<Rockstar>()
+            };
         }
 
-        public override object OnPost(Rockstars request)
+        public object Any(DeleteRockstar request)
         {
-            using (var db = DbFactory.Open())
-            {
-                db.Insert(request.TranslateTo<Rockstar>());
-                return OnGet(new Rockstars());
-            }
+            Db.DeleteById<Rockstar>(request.Id);
+            return Get(new Rockstars());
+        }
+
+        public object Post(Rockstar request)
+        {
+            Db.Insert(request);
+            return Get(new Rockstars());
+        }
+
+        public object Any(ResetRockstars request)
+        {
+            Db.DeleteAll<Rockstar>();
+            Db.InsertAll(AppHost.SeedData);
+            return Get(new Rockstars());
         }
     }
+
 }
