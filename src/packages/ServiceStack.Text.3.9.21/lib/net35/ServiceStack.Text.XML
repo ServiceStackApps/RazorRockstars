@@ -185,6 +185,12 @@
             and parsing member names and enum values in a case-insensitive manner.
             </summary>
         </member>
+        <member name="F:ServiceStack.Text.JsConfig.tsEmitLowercaseUnderscoreNames">
+            <summary>
+            <see langword="true"/> if the <see cref="T:ServiceStack.Text.Common.ITypeSerializer"/> is configured
+            to support web-friendly serialized formats, ie emitting lowercase_underscore_casing for JSON
+            </summary>
+        </member>
         <member name="F:ServiceStack.Text.JsConfig._propertyConvention">
             <summary>
             Define how property names are mapped during deserialization

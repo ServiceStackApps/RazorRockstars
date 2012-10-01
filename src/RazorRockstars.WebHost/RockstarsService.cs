@@ -31,6 +31,7 @@ namespace RazorRockstars.WebHost
         public List<Rockstar> Results { get; set; }
     }
 
+    //[Authenticate]
     [ClientCanSwapTemplates]
     [DefaultView("Rockstars")]
     public class RockstarsService : Service

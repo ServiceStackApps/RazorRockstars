@@ -3,9 +3,13 @@ using Funq;
 using ServiceStack.DataAnnotations;
 using ServiceStack.Logging;
 using ServiceStack.Logging.Support.Logging;
+using ServiceStack.MiniProfiler;
+using ServiceStack.MiniProfiler.Data;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
 using ServiceStack.ServiceHost;
+using ServiceStack.ServiceInterface;
+using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.Text;
 using ServiceStack.WebHost.Endpoints;
 
@@ -35,7 +39,9 @@ namespace RazorRockstars.WebHost
             Plugins.Add(new RazorFormat());
 
             container.Register<IDbConnectionFactory>(
-                new OrmLiteConnectionFactory(":memory:", false, SqliteDialect.Provider));
+                new OrmLiteConnectionFactory(":memory:", false, SqliteDialect.Provider) {
+                    ConnectionFilter = x => new ProfiledDbConnection(x, Profiler.Current, false)
+                });
 
             using (var db = container.Resolve<IDbConnectionFactory>().OpenDbConnection())
             {
@@ -45,9 +51,27 @@ namespace RazorRockstars.WebHost
 
             SetConfig(new EndpointHostConfig {
                 CustomHttpHandlers = {
-                    { HttpStatusCode.NotFound, new RazorHandler("/notfound") }
+                    { HttpStatusCode.NotFound, new RazorHandler("/notfound") },
+                    { HttpStatusCode.Unauthorized, new RazorHandler("/login") },
                 }
             });
+
+            //AddAuthentication(container);
+        }
+
+        private void AddAuthentication(Container container)
+        {
+            container.Register<IUserAuthRepository>(c =>
+                new OrmLiteAuthRepository(c.Resolve<IDbConnectionFactory>()));
+
+            var authRepo = (OrmLiteAuthRepository)container.Resolve<IUserAuthRepository>();
+            authRepo.CreateMissingTables();
+
+            Plugins.Add(new AuthFeature(() => new AuthUserSession(),
+                new IAuthProvider[] {
+                    new CredentialsAuthProvider(),
+                }
+            ));
         }
     }
 
