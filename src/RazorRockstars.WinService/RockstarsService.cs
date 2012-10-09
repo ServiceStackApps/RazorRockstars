@@ -7,6 +7,7 @@ using ServiceStack.Text;
 namespace RazorRockstars.WinService
 {
     [Route("/rockstars")]
+    [Route("/rockstars/{Id}")]
     [Route("/rockstars/aged/{Age}")]
     public class Rockstars
     {
@@ -62,7 +63,7 @@ namespace RazorRockstars.WinService
 
         public object Any(ResetRockstars request)
         {
-            Db.DeleteAll<Rockstar>();
+            Db.DropAndCreateTable<Rockstar>();
             Db.InsertAll(AppHost.SeedData);
             return Get(new Rockstars());
         }

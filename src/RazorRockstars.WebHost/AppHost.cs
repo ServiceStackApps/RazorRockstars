@@ -3,8 +3,6 @@ using Funq;
 using ServiceStack.DataAnnotations;
 using ServiceStack.Logging;
 using ServiceStack.Logging.Support.Logging;
-using ServiceStack.MiniProfiler;
-using ServiceStack.MiniProfiler.Data;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
 using ServiceStack.ServiceHost;
@@ -39,9 +37,7 @@ namespace RazorRockstars.WebHost
             Plugins.Add(new RazorFormat());
 
             container.Register<IDbConnectionFactory>(
-                new OrmLiteConnectionFactory(":memory:", false, SqliteDialect.Provider) {
-                    ConnectionFilter = x => new ProfiledDbConnection(x, Profiler.Current, false)
-                });
+                new OrmLiteConnectionFactory(":memory:", false, SqliteDialect.Provider));
 
             using (var db = container.Resolve<IDbConnectionFactory>().OpenDbConnection())
             {
@@ -56,7 +52,7 @@ namespace RazorRockstars.WebHost
                 }
             });
 
-            //AddAuthentication(container);
+            //AddAuthentication(container); //Uncomment to enable User Authentication
         }
 
         private void AddAuthentication(Container container)

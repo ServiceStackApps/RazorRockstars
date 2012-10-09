@@ -8,6 +8,7 @@ using ServiceStack.Text;
 namespace RazorRockstars.SelfHost
 {
     [Route("/rockstars")]
+    [Route("/rockstars/{Id}")]
     [Route("/rockstars/aged/{Age}")]
     public class Rockstars
     {
@@ -63,7 +64,7 @@ namespace RazorRockstars.SelfHost
 
         public object Any(ResetRockstars request)
         {
-            Db.DeleteAll<Rockstar>();
+            Db.DropAndCreateTable<Rockstar>();
             Db.InsertAll(AppHost.SeedData);
             return Get(new Rockstars());
         }
