@@ -16,17 +16,17 @@ This project includes multiple configurations of the Razor Rockstars website in 
 
 
 ### Home Page 
-![Home Page](http://www.servicestack.net/files/rockstars-01.png)
+[![Home Page](http://www.servicestack.net/files/rockstars-01.png)](http://razor.servicestack.net/)
 
 ### Kurt Cobain Content Page
-![Kurt Cobain](http://www.servicestack.net/files/rockstars-02.png)
+[![Kurt Cobain](http://www.servicestack.net/files/rockstars-02.png)](http://razor.servicestack.net/stars/dead/cobain/)
 
 ### Dave Grohl Content Page
-![Dave Grohl](http://www.servicestack.net/files/rockstars-03.png)
+[![Dave Grohl](http://www.servicestack.net/files/rockstars-03.png)](http://razor.servicestack.net/stars/alive/grohl)
 
 ### Server-Side CRUD Page
-![Server-Side CRUD Page](http://www.servicestack.net/files/rockstars-04.png)
+[![Server-Side CRUD Page](http://www.servicestack.net/files/rockstars-04.png)](http://razor.servicestack.net/rockstars)
 
 ### Client-Side AngurlarJS Single Page App
-![Client-Side AngurlarJS Single Page App](http://www.servicestack.net/files/rockstars-05.png)
+[![Client-Side AngurlarJS Single Page App](http://www.servicestack.net/files/rockstars-05.png)](http://razor.servicestack.net/rockstars?View=AngularJS)
 
