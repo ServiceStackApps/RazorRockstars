@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.SelfHost", "RazorRockstars.SelfHost\RazorRockstars.SelfHost.csproj", "{78E2FDB0-D108-4639-B9B7-D5BF86CA5534}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.WebHost", "RazorRockstars.WebHost\RazorRockstars.WebHost.csproj", "{1CEFE4A6-3845-436F-A393-505683658521}"
