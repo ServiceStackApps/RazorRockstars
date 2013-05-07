@@ -33,7 +33,7 @@ Love had a nomadic and troubled childhood. She moved with her family to Marcola,
 briefly lived in New Zealand before being sent back to live with her stepfather in Oregon. At age 14, 
 Love was arrested for shoplifting a t-shirt and was sent to Hillcrest Youth Correctional Facility. 
 According to the Oregon's Children's Services Division, Love was then moved to over 20 different 
-facilities and foster homes between 1978 and 1980. At age 16, Love moved to Portland, where she 
+facilities and foster homes between 1978 and 1980. At age 16, Lovemoved to Portland, where she 
 began working illegally as an exotic dancer, and briefly as a DJ at Portland's community radio station, 
 KBOO. She also took job opportunities working briefly at dance halls in Japan and Taiwan, and wrote 
 missives under the name "Courtney Michelle" in punk-zine Maximumrocknroll on local Portland bands Poison 
