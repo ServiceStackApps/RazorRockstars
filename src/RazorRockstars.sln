@@ -8,9 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.WinService", "RazorRockstars.WinService\RazorRockstars.WinService.csproj", "{36031A25-3414-44F8-9ABC-D961BCB983D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FF5DC9B6-4C14-431F-823D-BEA1F2D32208}"
-	ProjectSection(SolutionItems) = preProject
-		..\build\build.bat = ..\build\build.bat
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
