@@ -228,7 +228,6 @@
                 <li>Pages with typed View Models</li>
                 <li>Pages with dynamic View Models</li>
                 <li>Access IOC dependencies directly in Views</li>
-                <li>Support for multiple base classes with different Razor .extensions</li>
                 <li>Easily configure custom error pages in code</li>
             </ul>
         </li>
@@ -245,7 +244,6 @@
             <a href="#optimized-for-dev">Optimized for developer productivity</a>            
             <ul>
                 <li>Great performance, Optimized for run-time and iteration times</li>        
-                <li>Parallel compilation of Razor views at startup (in Debug mode)</li>
                 <li>Automatic reload of modified views, layout templates and partials (in Debug mode)</li>
             </ul>
         </li>
@@ -441,8 +439,8 @@
     <p>
         Unlike MVC (which has a convention for views based on the name of the controller), ServiceStack's view selection 
         is based on the name of the Response or Request model (DTO) returned. E.g. If your Service returns a 
-        <b>RockstarsResponse</b> then we first look for a view called 
-        <b>RockstarsResponse.cshtml</b> followed by the Request DTO name <b>Rockstars.cshtml</b>
+        <b>RockstarsResponse</b> then we first look for a view of the same name as the Request DTO called 
+        <b>Rockstars.cshtml</b> followed by the Response DTO name <b>RockstarsResponse.cshtml</b> 
         (in all registered view engine extensions).
     </p>
     <p>
@@ -661,26 +659,6 @@
     var rockstars = Db.Select&lt;Rockstar&gt;(q => q.Age == Model.Age);
     </code></pre>
 
-    <h3>Support for multiple base classes with different Razor .extensions</h3>
-    
-    <p>
-        ServiceStack also allows having different custom base classes for different Razor extensions which you can register with:
-    </p>
-
-    <pre><code>
-    Plugins.Add(new RazorFormat { 
-        RazorExtensionBaseTypes = {
-            {"myrzr", typeof(MyCustomViewPage&lt;&gt;) },
-        }
-    });
-    </code></pre>
-
-    <p>
-        This will tell ServiceStack's RazorFormat to also scan for files ending with <b>.myrzr</b> and instantiate them 
-        with the base class of <b>MyCustomViewPage&lt;&gt;</b>. By default ServiceStack looks for Razor views with either 
-        <b>.cshtml</b> or <b>.rzr</b> extensions. Only views with <b>.cshtml</b> get VS.NET's Razor intelli-sense.
-    </p>
-
     <h3>Easily configure custom error pages in code</h3>
     <p>
         Since all common web tasks should be easy to configure, we've made it easy to register your own custom IHttpHandler's
@@ -800,21 +778,11 @@
         We continue to develop with this balance in mind and are continually looking to improve start-up times where possible (in DebugMode).
     </p>
 
-    <h3>Parallel compilation of Razor views at startup (in Debug mode)</h3>
-    <p>
-        To start with we're deferring compilation of all MVC Razor views onto a work queue which gets processed by multiple background threads 
-        (based on the number of cores) in parallel after Application_Start. 
-    </p>
-    <p>
-        If a View is requested before it's been compiled, it jumps the Queue and gets compiled on the fly in the foreground.
-        For times when the Layout Template is unknown (i.e. hasn't been registered) we wait for compilation of all pages before continuing.
-    </p>
-
     <h3>Automatic reload of modified views, layout templates and partials (in Debug mode)</h3>
     <p>
-        However the best way to avoid the Start-Up penalty is to avoid having to restart the AppDomain in the first place. So in Debug Mode 
-        we'll also do this where the requested View, it's partials and Layout template is checked for modifications and auto-reloaded 
-        on the fly before rendering. The penalty for these checks is not paid in Release (production) mode.
+        The best way to avoid the Start-Up penalty is to avoid having to restart the AppDomain in the first place. So in Debug Mode 
+        we'll also do this where a background file system watcher monitors all pages, partials and Layout templates for modifications 
+        and recompiles and auto-reloads them on the fly, all-ready to deliever instant response time once the page is requested. 
     </p>
     
     <a name="future"></a>
