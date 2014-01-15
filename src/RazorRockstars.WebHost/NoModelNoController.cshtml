@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "SimpleLayout";
     ViewBag.Title = "Page with no model and no C# controller - just this page :)";
-    int age = 0;
+    int age = 0;    
     var hasAge = Request.QueryString["Age"] != null && int.TryParse(Model.Age, out age);
     var rockstars = hasAge
         ? Db.Select<Rockstar>(q => q.Age == age)

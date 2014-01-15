@@ -1,31 +1,17 @@
 ﻿using System.Net;
 using Funq;
+using ServiceStack;
+using ServiceStack.Data;
 using ServiceStack.DataAnnotations;
 using ServiceStack.Logging;
-using ServiceStack.Logging.Support.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
-using ServiceStack.ServiceHost;
-using ServiceStack.Text;
-using ServiceStack.WebHost.Endpoints;
 
 //The entire C# code for the stand-alone RazorRockstars demo.
 namespace RazorRockstars.WinService
 {
     public class AppHost : AppHostHttpListenerBase
     {
-        public static Rockstar[] SeedData = new[] {
-            new Rockstar(1, "Jimi", "Hendrix", 27, false), 
-            new Rockstar(2, "Janis", "Joplin", 27, false), 
-            new Rockstar(4, "Kurt", "Cobain", 27, false),              
-            new Rockstar(5, "Elvis", "Presley", 42, false), 
-            new Rockstar(6, "Michael", "Jackson", 50, false), 
-            new Rockstar(7, "Eddie", "Vedder", 47, true), 
-            new Rockstar(8, "Dave", "Grohl", 43, true), 
-            new Rockstar(9, "Courtney", "Love", 48, true), 
-            new Rockstar(10, "Bruce", "Springsteen", 62, true), 
-        };
-
         public AppHost() : base("Test Razor", typeof(AppHost).Assembly) { }
 
         public override void Configure(Container container)
@@ -35,19 +21,18 @@ namespace RazorRockstars.WinService
             Plugins.Add(new RazorFormat());
 
             container.Register<IDbConnectionFactory>(
-                new OrmLiteConnectionFactory(":memory:", false, SqliteDialect.Provider));
+                new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider));
 
             using (var db = container.Resolve<IDbConnectionFactory>().OpenDbConnection())
             {
                 db.CreateTableIfNotExists<Rockstar>();
-                db.InsertAll(SeedData);
+                db.InsertAll(RockstarsService.SeedData);
             }
 
-            SetConfig(new EndpointHostConfig {
-                CustomHttpHandlers = {
-                    { HttpStatusCode.NotFound, new RazorHandler("/notfound") }
-                }
-            });
+            this.CustomErrorHttpHandlers[HttpStatusCode.NotFound] = new RazorHandler("/notfound");
+            this.CustomErrorHttpHandlers[HttpStatusCode.Unauthorized] = new RazorHandler("/login");
+
+            //AddAuthentication(container); //Uncomment to enable User Authentication
         }
     }
 
