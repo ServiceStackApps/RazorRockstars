@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ServiceStack.OrmLite.Sqlite.Mono</id>
+    <version>4.0.8</version>
+    <title>OrmLite.Sqlite - Compatible with Mono. inc. win x86/64 sqlite.dll</title>
+    <authors>Service Stack</authors>
+    <owners>Service Stack</owners>
+    <licenseUrl>https://servicestack.net/terms</licenseUrl>
+    <projectUrl>https://github.com/ServiceStack/ServiceStack.OrmLite</projectUrl>
+    <iconUrl>https://servicestack.net/img/logo-32.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Light, simple and fast convention-based code-first POCO ORM. Support for Creating and Dropping Table Schemas from POCOs, Complex Property types transparently stored in schemaless text blobs in Sqlite.</description>
+    <copyright>ServiceStack 2013 and contributors</copyright>
+    <language>en-US</language>
+    <tags>Sqlite 32bit OrmLite POCO Code-First Orm Schema-less Blobs</tags>
+    <dependencies>
+      <dependency id="ServiceStack.OrmLite" version="4.0" />
+    </dependencies>
+  </metadata>
+</package>
