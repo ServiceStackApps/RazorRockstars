@@ -34,7 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -140,7 +140,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="sqlite\x86\sqlite3.dll" />
-    <Content Include="sqlite\x86\sqlite3.exe" />
     <Content Include="stars\alive\grohl.jpg" />
     <Content Include="stars\alive\Love\splash.jpg" />
     <Content Include="stars\alive\Springsteen\splash.jpg" />
