@@ -9,7 +9,7 @@ using ServiceStack.Razor;
 //The entire C# code for the stand-alone RazorRockstars demo.
 namespace RazorRockstars.SelfHost
 {
-    public class AppHost : AppHostHttpListenerBase
+    public class AppHost : AppSelfHostBase
     {
         public AppHost() : base("Test Razor", typeof(AppHost).Assembly) { }
 
