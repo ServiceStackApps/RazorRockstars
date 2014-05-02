@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 using ServiceStack;
+using ServiceStack.Logging;
 using ServiceStack.Text;
 
 namespace RazorRockstars.CompiledViews.SelfHost
@@ -13,7 +14,8 @@ namespace RazorRockstars.CompiledViews.SelfHost
         static void Main(string[] args)
         {
             //LogManager.LogFactory = new ConsoleLogFactory();
-            ExportSqliteDll();
+
+            ExportMonoSqliteDll();
 
             new AppHost()
                 .Init()
@@ -26,7 +28,26 @@ namespace RazorRockstars.CompiledViews.SelfHost
             Thread.Sleep(Timeout.Infinite);
         }
 
-        public static void ExportSqliteDll()
+        public static void ExportMonoSqliteDll()
+        {
+            if (Env.IsMono)
+                return; //Uses system sqlite3.so or sqlite3.dylib
+
+            var resPath = "{0}.sqlite3.dll".Fmt(typeof(AppHost).Namespace);
+
+            var resInfo = typeof(AppHost).Assembly.GetManifestResourceInfo(resPath);
+            if (resInfo == null)
+                throw new Exception("Couldn't load sqlite3.dll");
+
+            var dllBytes = typeof(AppHost).Assembly.GetManifestResourceStream(resPath).ReadFully();
+            var dirPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            var filePath = Path.Combine(dirPath, "sqlite3.dll");
+
+            File.WriteAllBytes(filePath, dllBytes);
+        }
+
+        public static void ExportWindowsSqliteDll()
         {
             var resPath = "{0}.{1}.SQLite.Interop.dll".Fmt(typeof(AppHost).Namespace, Environment.Is64BitProcess ? "x64" : "x86");
 
@@ -35,14 +56,6 @@ namespace RazorRockstars.CompiledViews.SelfHost
                 throw new Exception("Couldn't load SQLite.Interop.dll");
 
             var dllBytes = typeof(AppHost).Assembly.GetManifestResourceStream(resPath).ReadFully();
-
-            //Always throws with either x86 / x64 dlls. Might succeed 1 day, but not this day.
-            //try
-            //{
-            //    Assembly.Load(dllBytes);
-            //    return;
-            //}
-            //catch (Exception) {}
 
             var dirPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                                Environment.Is64BitProcess ? "x64" : "x86");
