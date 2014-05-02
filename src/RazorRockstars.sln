@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledView
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledViews.WebHost", "RazorRockstars.CompiledViews.WebHost\RazorRockstars.CompiledViews.WebHost.csproj", "{237A767C-EC36-4CBB-957E-70CE1CA041E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledViews.WpfHost", "RazorRockstars.CompiledViews.WpfHost\RazorRockstars.CompiledViews.WpfHost.csproj", "{8B4F593B-BFE5-4652-9AB4-8AE18A017066}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,16 @@ Global
 		{237A767C-EC36-4CBB-957E-70CE1CA041E9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{237A767C-EC36-4CBB-957E-70CE1CA041E9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{237A767C-EC36-4CBB-957E-70CE1CA041E9}.Release|x86.ActiveCfg = Release|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
