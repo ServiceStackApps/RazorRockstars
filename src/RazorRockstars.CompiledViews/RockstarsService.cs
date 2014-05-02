@@ -14,7 +14,7 @@ namespace RazorRockstars
         public int? Age { get; set; }
         public int Id { get; set; }
     }
-
+    
     [Route("/rockstars/delete/{Id}")]
     public class DeleteRockstar
     {
