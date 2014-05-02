@@ -199,6 +199,12 @@
             </summary>
             <param name="container">Container to register.</param>
         </member>
+        <member name="M:ServiceStack.ServiceStackHost.RedirectDirectory(ServiceStack.Web.IHttpRequest)">
+            <summary>
+            Retain the same behavior as ASP.NET and redirect requests to directores 
+            without a trailing '/'
+            </summary>
+        </member>
         <member name="M:ServiceStack.ServiceStackHost.OnPreExecuteServiceFilter(ServiceStack.IService,System.Object,ServiceStack.Web.IRequest,ServiceStack.Web.IResponse)">
             <summary>
             Executed immediately before a Service is executed. Use return to change the request DTO used, must be of the same type.
@@ -248,12 +254,6 @@
         <member name="P:ServiceStack.ServiceStackHost.Container">
             <summary>
             The AppHost.Container. Note: it is not thread safe to register dependencies after AppStart.
-            </summary>
-        </member>
-        <member name="M:ServiceStack.Host.HttpListener.HttpListenerBase.RedirectDirectory(ServiceStack.Web.IHttpRequest)">
-            <summary>
-            Retain the same behavior as ASP.NET and redirect requests to directores 
-            without a trailing '/'
             </summary>
         </member>
         <member name="M:ServiceStack.Host.HttpListener.HttpListenerBase.Start(System.String,System.Threading.WaitCallback)">
