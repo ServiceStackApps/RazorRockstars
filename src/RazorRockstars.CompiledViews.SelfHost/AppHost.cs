@@ -16,11 +16,9 @@ namespace RazorRockstars.CompiledViews.SelfHost
 
         public override void Configure(Container container)
         {
-            LogManager.LogFactory = new ConsoleLogFactory();
-
             SetConfig(new HostConfig {
                 DebugMode = true,
-                EmbeddedResourceSources = { Assembly.GetExecutingAssembly() },
+                EmbeddedResourceBaseTypes = { GetType(), typeof(BaseTypeMarker) },
             });
 
             Plugins.Add(new RazorFormat {
