@@ -239,3 +239,5 @@ tfoot td {
 #app table { margin: auto; }
 #app h3 { margin: 30px 0 15px 0; text-align: center; }
 #app form { padding: 20px; }
+
+.line-data { width: 100%; }
