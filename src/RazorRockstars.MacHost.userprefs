@@ -1,0 +1,13 @@
+﻿<Properties MonoDevelop.MonoMac.LastXamMacNagTime="5/3/2014 8:47:50 AM">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RazorRockstars.MacHost/AppHost.cs">
+    <Files>
+      <File FileName="RazorRockstars.MacHost/Main.cs" Line="7" Column="1" />
+      <File FileName="RazorRockstars.MacHost/AppHost.cs" Line="28" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
