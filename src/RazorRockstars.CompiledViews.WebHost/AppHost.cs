@@ -12,7 +12,7 @@ namespace RazorRockstars.CompiledViews.WebHost
 {
     public class AppHost : AppHostBase
     {
-        public AppHost() : base("Test Razor", typeof(RockstarsService).Assembly) { }
+        public AppHost() : base("Razor Rockstars", typeof(RockstarsService).Assembly) { }
 
         public override void Configure(Container container)
         {
@@ -28,6 +28,8 @@ namespace RazorRockstars.CompiledViews.WebHost
             {
                 LoadFromAssemblies = { typeof(RockstarsService).Assembly }
             });
+            Plugins.Add(new PostmanFeature());
+            Plugins.Add(new CorsFeature());
 
             container.Register<IDbConnectionFactory>(
                 new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider));
