@@ -441,7 +441,7 @@
         Unlike MVC (which has a convention for views based on the name of the controller), ServiceStack's view selection 
         is based on the name of the Response or Request model (DTO) returned. E.g. If your Service returns a 
         <b>RockstarsResponse</b> then we first look for a view of the same name as the Request DTO called 
-        <b>Rockstars.cshtml</b> followed by the Response DTO name <b>RockstarsResponse.cshtml</b> 
+        <b>SearchRockstars.cshtml</b> followed by the Response DTO name <b>RockstarsResponse.cshtml</b> 
         (in all registered view engine extensions).
     </p>
     <p>
@@ -453,7 +453,16 @@
     <h3>Change Views and Layout templates at runtime</h3>
     <p>
         The above convention is overrideable where you can change both what View and Layout Template is used at runtime by
-        returning your Response inside a decorated <b>HttpResult</b>:
+        using the <b>[DefaultView]</b> Request Filter attribute:
+    </p>
+
+    <pre><code>
+    [DefaultView("Rockstars")]
+    public class RockstarsService : Service { ... }
+    </code></pre>
+
+    <p>
+        or by returning your Response inside a decorated <b>HttpResult</b>:
     </p>
     
     <pre><code>
@@ -474,7 +483,7 @@
 
     <pre><code>
     [ClientCanSwapTemplates]
-    public class RockstarsService : RestServiceBase<Rockstars> { ... }
+    public class RockstarsService : Service { ... }
     </code></pre>
     
     <p>

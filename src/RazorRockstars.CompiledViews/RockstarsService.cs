@@ -9,12 +9,12 @@ namespace RazorRockstars
     [Route("/rockstars")]
     [Route("/rockstars/{Id}")]
     [Route("/rockstars/aged/{Age}")]
-    public class Rockstars
+    public class SearchRockstars
     {
         public int? Age { get; set; }
         public int Id { get; set; }
     }
-    
+
     [Route("/rockstars/delete/{Id}")]
     public class DeleteRockstar
     {
@@ -75,7 +75,7 @@ namespace RazorRockstars
             new Rockstar(10, "Bruce", "Springsteen", 62, true), 
         };
 
-        public object Get(Rockstars request)
+        public object Get(SearchRockstars request)
         {
             return new RockstarsResponse {
                 Aged = request.Age,
@@ -91,20 +91,20 @@ namespace RazorRockstars
         public object Any(DeleteRockstar request)
         {
             Db.DeleteById<Rockstar>(request.Id);
-            return Get(new Rockstars());
+            return Get(new SearchRockstars());
         }
 
         public object Post(Rockstar request)
         {
             Db.Insert(request);
-            return Get(new Rockstars());
+            return Get(new SearchRockstars());
         }
 
         public object Any(ResetRockstars request)
         {
             Db.DropAndCreateTable<Rockstar>();
             Db.InsertAll(SeedData);
-            return Get(new Rockstars());
+            return Get(new SearchRockstars());
         }
     }
 }
