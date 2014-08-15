@@ -68,10 +68,10 @@
     ul {
         list-style-type: none;
     }
-    li {
+    #features li {
         font-weight: bold;    
     }
-    li ul li {
+    #features li ul li {
         font-weight: normal;
     }
     #routes {
@@ -112,7 +112,7 @@
     .line-data { width: 100%; }
 </style>
 <div id="page">
-  	<a href="http://github.com/ServiceStack/RazorRockstars/">
+  	<a href="http://github.com/ServiceStackApps/RazorRockstars/">
 		<img style="position:absolute;top:0;right:0;border:0;z-index:1031" 
 			 src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" 
              alt="Fork me on GitHub">
@@ -130,11 +130,11 @@
          <a class="dead" href="/stars/dead/joplin/"><img src="/img/thumb-08.jpg" /></a>
      </div>
 
-    <a id="ss-link" href="http://mono.servicestack.net"></a>
+    <a id="ss-link" href="https://servicestack.net"></a>
 
     <h2 style="padding-top: 220px">ServiceStack's new HTML powers - the website framework</h2>
     <p>
-        Razor Rockstars is a <a href="http://mono.servicestack.net">ServiceStack</a> demo website 
+        Razor Rockstars is a <a href="https://servicestack.net">ServiceStack</a> demo website 
         showcasing ServiceStack's new MVC Razor Engine support and its enriched HTML story 
         with multiple view engine support and No Controller / No Ceremony development options.
         In many cases we've gone beyond what MVC provides with many new and natural features 
@@ -171,7 +171,7 @@
         To make it easier to explore all features on this site and to provide a better idea of how 
         it all fits together, all pages include gists of the source code used to render itself. 
         Source code for this entire website is in the 
-        <a href="https://github.com/ServiceStack/RazorRockstars">RazorRockstars Github project</a>.
+        <a href="https://github.com/ServiceStackApps/RazorRockstars">RazorRockstars Github project</a>.
     </p>
     
     <a name="features"></a>
@@ -263,48 +263,59 @@
         Like the rest of ServiceStack, you can create websites and REST services in any host on any platform, e.g:
     </p>
     <ul>
-        <li>Any ASP.NET host</li>
-        <li>A Stand-alone, self-hosted HttpListener with external views</li>
-        <li>A Stand-alone, self-hosted HttpListener with embedded Razor views in your ConsoleHost.exe</li>
-        <li>A Stand-alone Windows Service</li>
-        <li><a href="http://stackoverflow.com/a/12188358/85785">All the above on Linux with Mono</a></li>
-    </ul>
-   
-    <h3>Live ASP.NET and Self-Hosting demos</h3>
-    <ul class="urls">
         <li>
-            <a href="http://razor.servicestack.net">razor.servicestack.net</a>
-            ASP.NET Hosted live demo powered by Linux / Nginx / MonoFastCGI
+            <a href="https://github.com/ServiceStackApps/RazorRockstars/tree/master/src/RazorRockstars.WebHost">
+            Any ASP.NET host
+            </a>
         </li>
         <li>
-            <a href="http://razor-console.servicestack.net">razor-console.servicestack.net</a>
-            Self-Hosted Console Application hosted behind Nginx Reverse Proxy
+            <a href="https://github.com/ServiceStackApps/RazorRockstars/tree/master/src/RazorRockstars.SelfHost">
+            A Stand-alone, self-hosted HttpListener
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/ServiceStackApps/RazorRockstars/tree/master/src/RazorRockstars.WinService">
+            A Stand-alone Windows Service
+            </a>
         </li>
     </ul>
-    
-    <h4>Live Demos are Developed on VS.NET and Deployed to Linux</h4>
-    <p>
-        All <a href="http://mono.servicestack.net">servicestack.net</a> demos are developed on
-        Windows with VS.NET and are git-deployed to the same
-        <a href="http://www.hetzner.de/en/hosting/produkte_vserver/vq19">Ubuntu vServer</a> with 
-        <a href="http://stackoverflow.com/a/12188358/85785">Nginx / MonoFastCGI</a>.
-    </p>
+
+    <h3>
+    Self-hosted HttpListener with
+    </h3>
+    <ul>
+        <li>
+            <a href="https://github.com/ServiceStack/ServiceStack.Gap#self-hosting-console-app">
+                Entire App ILMerged into a single cross-platform App.exe
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/ServiceStack/ServiceStack.Gap#winforms-with-chromium-embedded-framework">
+                Hosted inside WinForms with Chromium Embedded Framework
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/ServiceStack/ServiceStack.Gap#mac-osx-cocoa-app-with-xmarainmac">
+                Hosted inside Mac OSX Cocoa App with Xmarain.Mac
+            </a>
+        </li>
+    </ul>
    
     <p>
         Both the 
-        <a href="https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.WebHost">ASP.NET Razor Rockstars</a> 
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/tree/master/src/RazorRockstars.WebHost">ASP.NET Razor Rockstars</a> 
         and the 
-        <a href="https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.SelfHost">Self-Hosted replica</a>
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/tree/master/src/RazorRockstars.SelfHost">Self-Hosted replica</a>
         are identical except the 
-        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.SelfHost/AppHost.cs#L14">
-            SelfHost AppHost inherits from AppHostHttpListenerBase</a> and all its assets have the build action set to <b>Copy if Newer</b>
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/blob/master/src/RazorRockstars.SelfHost/AppHost.cs#L12">
+            SelfHost AppHost inherits from AppSelfHostBase</a> and all its assets have the build action set to <b>Copy if Newer</b>
         so they're copied to the <b>/bin</b> directory after each build making it suitable for xcopyable deployment. 
     </p>
    
-    <h4>Windows Service</h4>
+    <h3>Windows Service</h3>
     <p>
         As we expect it to be a popular use-case we've added a version of 
-        <a href="https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.WinService">
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/tree/master/src/RazorRockstars.WinService">
             Razor Rockstars running inside a <b>Windows Service</b></a>
         complete with install.bat / uninstall.bat Windows Service util scripts.
     </p>
@@ -315,7 +326,7 @@
     <p>
         One of ServiceStack's core objectives is to retain an invisible API that gets out of your way.
         The ServiceStack service itself is a classic example, it's just a 
-        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs#L33">simple C# class</a> auto-wired with your registered dependencies that accepts any user-defined Request DTO and 
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs#L33">simple C# class</a> auto-wired with your registered dependencies that accepts any user-defined Request DTO and 
         lets you return any object which is automatically serialized into the expected Response Content-Type. 
         Composable and re-usable functionality can be applied to all your services via 
         <a href="https://github.com/ServiceStack/ServiceStack/wiki/Request-and-response-filters">Request / Response Filters</a>, 
@@ -399,7 +410,7 @@
     <img class="preview" src="/img/rockstars-view.png" align="right" style="margin-left: 20px;" alt="Solution view of Rockstars page" />
     <p>
         A live example of this is the 
-        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs">RockstarsService.cs</a>
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs">RockstarsService.cs</a>
         which is available by any of the defined custom routes, e.g:
     </p>
     <dl id="routes">
@@ -430,18 +441,18 @@
     </dl>
     <p>
         When viewed in a browser it will return the HTML output generated by the 
-        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/Views/Rockstars.cshtml"><b>Rockstars.cshtml</b></a> view 
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/blob/master/src/RazorRockstars.WebHost/Views/Rockstars.cshtml"><b>Rockstars.cshtml</b></a> view 
         embedded inside the specified 
-        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/Views/Shared/HtmlReport.cshtml"><b>HtmlReport.cshtml</b></a> template
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/blob/master/src/RazorRockstars.WebHost/Views/Shared/HtmlReport.cshtml"><b>HtmlReport.cshtml</b></a> template
         using the model populated by the 
-        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs"><b>RockstarsService.cs</b></a>
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs"><b>RockstarsService.cs</b></a>
     </p>
 
     <p>
         Unlike MVC (which has a convention for views based on the name of the controller), ServiceStack's view selection 
         is based on the name of the Response or Request model (DTO) returned. E.g. If your Service returns a 
         <b>RockstarsResponse</b> then we first look for a view of the same name as the Request DTO called 
-        <b>SearchRockstars.cshtml</b> followed by the Response DTO name <b>RockstarsResponse.cshtml</b> 
+        <b>Rockstars.cshtml</b> followed by the Response DTO name <b>RockstarsResponse.cshtml</b> 
         (in all registered view engine extensions).
     </p>
     <p>
@@ -453,16 +464,7 @@
     <h3>Change Views and Layout templates at runtime</h3>
     <p>
         The above convention is overrideable where you can change both what View and Layout Template is used at runtime by
-        using the <b>[DefaultView]</b> Request Filter attribute:
-    </p>
-
-    <pre><code>
-    [DefaultView("Rockstars")]
-    public class RockstarsService : Service { ... }
-    </code></pre>
-
-    <p>
-        or by returning your Response inside a decorated <b>HttpResult</b>:
+        returning your Response inside a decorated <b>HttpResult</b>:
     </p>
     
     <pre><code>
@@ -475,7 +477,7 @@
     <p>
         This is useful whenever you want to display the same page in specialized Mobile and Print Preview website templates.
         You can also let the client change what View and Template gets used by 
-        <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs#L32">attrubuting your service</a> 
+        <a href="https://github.com/ServiceStackApps/RazorRockstars/blob/master/src/RazorRockstars.WebHost/RockstarsService.cs#L32">attrubuting your service</a> 
         with the 
         <a href="https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/ClientCanSwapTemplatesAttribute.cs">[ClientCanSwapTemplates]</a> 
         Filter:
@@ -483,7 +485,7 @@
 
     <pre><code>
     [ClientCanSwapTemplates]
-    public class RockstarsService : Service { ... }
+    public class RockstarsService : RestServiceBase<Rockstars> { ... }
     </code></pre>
     
     <p>
@@ -717,7 +719,7 @@
     <h3>Include Partial Markdown views in Razor pages</h3>
     <p>
         We loved Markdown and Razor so much that included in ServiceStack is an enhanced version of Markdown with Razor functionality 
-        and Syntax called <a href="http://mono.servicestack.net/docs/markdown/markdown-razor">Markdown Razor</a> which should be
+        and Syntax called <a href="https://servicestack.net/docs/markdown/markdown-razor">Markdown Razor</a> which should be
         instantly familiar to existing Razor users. 
     </p>
     
@@ -741,9 +743,9 @@
 
     <h3>Build entire website pages using just Markdown Razor + static _Layout.shtml templates</h3>
     <p>
-        Despite it's simple roots, <a href="http://mono.servicestack.net/docs/markdown/markdown-razor">Markdown Razor</a> is a 
+        Despite it's simple roots, <a href="https://servicestack.net/docs/markdown/markdown-razor">Markdown Razor</a> is a 
         featured View Engine capable of rendering complete websites as done with the content-heavy (ajax/pushState enhanced)
-        <a href="http://mono.servicestack.net/docs/">servicestack.net/docs/</a> website - written entirely and maintained 
+        <a href="https://servicestack.net/docs/">servicestack.net/docs/</a> website - written entirely and maintained 
         using Markdown Razor.
     </p>
 
@@ -829,8 +831,8 @@
     <h3>Optimizing for Single Page Apps</h3>
     <p>
         One way we're currently improving the situation (that also provides a better UX for end-users) has been focusing on making 
-        <a href="http://mono.servicestack.net/100k-downloads/#spa-optimized">ServiceStack the ideal platform for Single Page Apps</a>
-        - to this end, we're already shipping many <a href="http://mono.servicestack.net/100k-downloads/#spa-optimized">best-of-class features</a> 
+        <a href="https://servicestack.net/100k-downloads/#spa-optimized">ServiceStack the ideal platform for Single Page Apps</a>
+        - to this end, we're already shipping many <a href="https://servicestack.net/100k-downloads/#spa-optimized">best-of-class features</a> 
         and since Single Page Apps rely on client-side views for rendering, they escape the .NET compilation tax. 
     <p>
             
@@ -880,7 +882,7 @@
 <div id="preview">
     <h1>Implementation</h1>
     
-    <h3><b>AppHost</b> <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/AppHost.cs">/AppHost.cs</a></h3>
+    <h3><b>AppHost</b> <a href="https://github.com/ServiceStackApps/RazorRockstars/blob/master/src/RazorRockstars.WebHost/AppHost.cs">/AppHost.cs</a></h3>
     <p>
         In every ServiceStack web service there is a single AppHost which contains all your 
         services configuration and registration (in code). 

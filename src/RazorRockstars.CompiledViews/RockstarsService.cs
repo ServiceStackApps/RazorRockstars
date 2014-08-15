@@ -21,7 +21,7 @@ namespace RazorRockstars
         public int Id { get; set; }
     }
 
-    [Route("/rockstars/delete/reset")]
+    [Route("/reset")]
     public class ResetRockstars { }
 
     [Csv(CsvBehavior.FirstEnumerable)]

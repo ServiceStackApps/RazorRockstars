@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledView
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledViews.WpfHost", "RazorRockstars.CompiledViews.WpfHost\RazorRockstars.CompiledViews.WpfHost.csproj", "{8B4F593B-BFE5-4652-9AB4-8AE18A017066}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompiledViews", "CompiledViews", "{FDC20F19-B8EF-4212-8A3E-E5D31755CE76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,5 +107,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CBB4DD4C-5E48-4878-A018-658899F250F1} = {FDC20F19-B8EF-4212-8A3E-E5D31755CE76}
+		{82216D76-A301-4746-82D6-94DC5E014330} = {FDC20F19-B8EF-4212-8A3E-E5D31755CE76}
+		{237A767C-EC36-4CBB-957E-70CE1CA041E9} = {FDC20F19-B8EF-4212-8A3E-E5D31755CE76}
+		{8B4F593B-BFE5-4652-9AB4-8AE18A017066} = {FDC20F19-B8EF-4212-8A3E-E5D31755CE76}
 	EndGlobalSection
 EndGlobal

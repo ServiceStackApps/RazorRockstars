@@ -1,9 +1,7 @@
 ﻿using System.Net;
-using System.Reflection;
 using Funq;
 using ServiceStack;
 using ServiceStack.Data;
-using ServiceStack.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
 
