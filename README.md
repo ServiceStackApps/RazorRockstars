@@ -1,32 +1,26 @@
-RazorRockstars
-==============
+## [Razor Rockstars](https://github.com/ServiceStackApps/RazorRockstars)
 
-### Showcase of new Razor and HTML support in ServiceStack's REST-Services Framework
+> Showcase of ServiceStack's unified HTTP Stack with Razor support, embedded Markdown Razor Views, Controller-less Razor Pages, Cascading Layout templates, Smart View Pages, Flexible Layouts
 
-Razor Rockstars is a ServiceStack demo website showcasing ServiceStack's new MVC Razor Engine support enriching 
-its HTML story with multiple view engines and No Controller / No Ceremony web development options. 
-In many cases we've gone beyond what MVC provides with many new and natural features optimized for developer 
-happiness, fast iteration times and run-time performance putting the fun back into .NET / Mono web development!
+[![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/livedemos/razor.png)](http://razor.servicestack.net)
 
-This project includes multiple configurations of the Razor Rockstars website in the different supported hosts:
+#### Features
 
-  - [ASP.NET Host](https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.WebHost) - live demo at [razor.servicestack.net](http://razor.servicestack.net)
-  - [Standalone Self Host](https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.SelfHost) - live demo at [razor-console.servicestack.net](http://razor-console.servicestack.net)
-  - [Standalone Windows Service](https://github.com/ServiceStack/RazorRockstars/tree/master/src/RazorRockstars.WinService)
+ - [Runs Everywhere](http://razor.servicestack.net/#runs-everywhere)
+   - [Any ASP.NET host](https://github.com/ServiceStackApps/RazorRockstars/tree/master/src/RazorRockstars.WebHost)
+   - [A Stand-alone, self-hosted HttpListener](https://github.com/ServiceStackApps/RazorRockstars/tree/master/src/RazorRockstars.SelfHost)
+   - [A Stand-alone Windows Service](https://github.com/ServiceStackApps/RazorRockstars/tree/master/src/RazorRockstars.WinService)
+ - Self-hosted HttpListener with
+   - [Entire App ILMerged into a single cross-platform App.exe](https://github.com/ServiceStack/ServiceStack.Gap#self-hosting-console-app)
+   - [Hosted inside WinForms with Chromium Embedded Framework](https://github.com/ServiceStack/ServiceStack.Gap#winforms-with-chromium-embedded-framework)
+   - [Hosted inside Mac OSX Cocoa App with Xmarain.Mac](https://github.com/ServiceStack/ServiceStack.Gap#mac-osx-cocoa-app-with-xmarainmac)
+ - [One simple and unified HTTP stack](http://razor.servicestack.net/#unified-stack)
+ - [No Ceremony Option](http://razor.servicestack.net/#no-ceremony)
+ - [Smart View Pages](http://razor.servicestack.net/#smart-views)
+ - [Built-in Markdown](http://razor.servicestack.net/#markdown)
+ - [Optimized for developer productivity](http://razor.servicestack.net/#optimized-for-dev)
 
 
-### Home Page 
-[![Home Page](http://www.servicestack.net/files/rockstars-01.png)](http://razor.servicestack.net/)
+Try it out live at: [razor.servicestack.net](http://razor.servicestack.net)
 
-### Kurt Cobain Content Page
-[![Kurt Cobain](http://www.servicestack.net/files/rockstars-02.png)](http://razor.servicestack.net/stars/dead/cobain/)
-
-### Dave Grohl Content Page
-[![Dave Grohl](http://www.servicestack.net/files/rockstars-03.png)](http://razor.servicestack.net/stars/alive/grohl)
-
-### Server-Side CRUD Page
-[![Server-Side CRUD Page](http://www.servicestack.net/files/rockstars-04.png)](http://razor.servicestack.net/rockstars)
-
-### Client-Side AngurlarJS Single Page App
-[![Client-Side AngurlarJS Single Page App](http://www.servicestack.net/files/rockstars-05.png)](http://razor.servicestack.net/rockstars?View=AngularJS)
-
+Follow [@ServiceStack](http://twitter.com) or [+ServiceStack](https://plus.google.com/u/0/communities/112445368900682590445) for updates.
