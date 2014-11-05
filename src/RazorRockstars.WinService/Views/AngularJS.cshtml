@@ -25,7 +25,7 @@
                 LastName:$scope.LastName,
                 Age:$scope.Age,
                 Alive:$scope.Alive,
-                Url:"/stars/" + ($scope.Alive ? "alive" : "dead") + "/" + $scope.LastName.toLowerCase()
+                Url:"/stars/" + ($scope.Alive ? "alive" : "dead") + "/" + $scope.LastName.toLowerCase() + "/"
             });
             $scope.FirstName = $scope.LastName = $scope.Age = "";               
             $scope.Alive = false;

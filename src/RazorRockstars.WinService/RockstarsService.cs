@@ -45,7 +45,7 @@ namespace RazorRockstars
 
         public string Url
         {
-            get { return "/stars/{0}/{1}".Fmt(Alive ? "alive" : "dead", LastName.ToLower()); }
+            get { return "/stars/{0}/{1}/".Fmt(Alive ? "alive" : "dead", LastName.ToLower()); }
         }
 
         public Rockstar() { }
