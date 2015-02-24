@@ -33,6 +33,7 @@ namespace RazorRockstars.WebHost
             this.CustomErrorHttpHandlers[HttpStatusCode.Unauthorized] = new RazorHandler("/login");
 
             //AddAuthentication(container); //Uncomment to enable User Authentication
+            SetConfig(new HostConfig { DebugMode = true });
         }
 
         private void AddAuthentication(Container container)
