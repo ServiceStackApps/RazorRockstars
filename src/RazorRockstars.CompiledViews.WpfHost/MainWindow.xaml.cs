@@ -29,7 +29,7 @@ namespace RazorRockstars.CompiledViews.WpfHost
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            web.Navigate(new Uri("http://localhost:1337/"));
+            web.Navigate(new Uri("http://localhost:3333/"));
         }
     }
 }

@@ -27,7 +27,7 @@ namespace RazorRockstars.CompiledViews.WpfHost
 
             new AppHost()
                 .Init()
-                .Start("http://*:1337/");
+                .Start("http://*:3333/");
         }
 
         public static void ExportMonoSqliteDll()
