@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.SelfHost", "RazorRockstars.SelfHost\RazorRockstars.SelfHost.csproj", "{78E2FDB0-D108-4639-B9B7-D5BF86CA5534}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.WebHost", "RazorRockstars.WebHost\RazorRockstars.WebHost.csproj", "{1CEFE4A6-3845-436F-A393-505683658521}"
@@ -10,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FF5DC9B6-4C14-431F-823D-BEA1F2D32208}"
 	ProjectSection(SolutionItems) = preProject
 		..\build\copy.bat = ..\build\copy.bat
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledViews", "RazorRockstars.CompiledViews\RazorRockstars.CompiledViews.csproj", "{CBB4DD4C-5E48-4878-A018-658899F250F1}"

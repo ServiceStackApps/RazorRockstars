@@ -28,6 +28,8 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,40 +49,40 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ServiceStack, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.4.0.38\lib\net40\ServiceStack.dll</HintPath>
+    <Reference Include="ServiceStack, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.4.0.46\lib\net40\ServiceStack.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Client, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Client.4.0.38\lib\net40\ServiceStack.Client.dll</HintPath>
+    <Reference Include="ServiceStack.Client, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Client.4.0.46\lib\net40\ServiceStack.Client.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Common, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Common.4.0.38\lib\net40\ServiceStack.Common.dll</HintPath>
+    <Reference Include="ServiceStack.Common, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.4.0.46\lib\net40\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Interfaces.4.0.38\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.Interfaces.4.0.46\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.OrmLite, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.OrmLite.4.0.38\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+    <Reference Include="ServiceStack.OrmLite, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.4.0.46\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Razor, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Razor.4.0.38\lib\net45\ServiceStack.Razor.dll</HintPath>
+    <Reference Include="ServiceStack.Razor, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Razor.4.0.46\lib\net45\ServiceStack.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Text, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Text.4.0.38\lib\net40\ServiceStack.Text.dll</HintPath>
+    <Reference Include="ServiceStack.Text, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.0.46\lib\net40\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Razor.4.0.38\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.Razor.4.0.46\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -125,7 +127,6 @@
     <EmbeddedResource Include="img\AngularJS-large.png" />
     <EmbeddedResource Include="img\architecture-htmlformat.png" />
     <EmbeddedResource Include="img\cascading-layouts.png" />
-    <EmbeddedResource Include="img\dart-logo.png" />
     <EmbeddedResource Include="img\green_dust_scratch.png" />
     <EmbeddedResource Include="img\grohl-vs-vedder.png" />
     <EmbeddedResource Include="img\markup-impl.png" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <Content Include="default.cshtml" />
     <EmbeddedResource Include="htmlreport.css" />
+    <EmbeddedResource Include="img\react-logo.png" />
     <Content Include="Login.cshtml" />
     <Content Include="NoModelNoController.cshtml" />
     <Content Include="NotFound.cshtml" />
@@ -200,9 +202,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\ServiceStack.Razor.BuildTask.4.0.38\build\ServiceStack.Razor.BuildTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ServiceStack.Razor.BuildTask.4.0.38\build\ServiceStack.Razor.BuildTask.targets'))" />
+    <Error Condition="!Exists('..\packages\ServiceStack.Razor.BuildTask.4.0.46\build\ServiceStack.Razor.BuildTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ServiceStack.Razor.BuildTask.4.0.46\build\ServiceStack.Razor.BuildTask.targets'))" />
   </Target>
-  <Import Project="..\packages\ServiceStack.Razor.BuildTask.4.0.38\build\ServiceStack.Razor.BuildTask.targets" Condition="Exists('..\packages\ServiceStack.Razor.BuildTask.4.0.38\build\ServiceStack.Razor.BuildTask.targets')" />
+  <Import Project="..\packages\ServiceStack.Razor.BuildTask.4.0.46\build\ServiceStack.Razor.BuildTask.targets" Condition="Exists('..\packages\ServiceStack.Razor.BuildTask.4.0.46\build\ServiceStack.Razor.BuildTask.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

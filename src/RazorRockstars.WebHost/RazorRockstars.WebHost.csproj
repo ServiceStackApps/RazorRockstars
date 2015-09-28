@@ -27,6 +27,7 @@
     <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,48 +52,48 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Data.Sqlite, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.OrmLite.Sqlite.Mono.4.0.38\lib\net45\Mono.Data.Sqlite.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.OrmLite.Sqlite.Mono.4.0.46\lib\net45\Mono.Data.Sqlite.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.4.0.38\lib\net40\ServiceStack.dll</HintPath>
+    <Reference Include="ServiceStack, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.4.0.46\lib\net40\ServiceStack.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Client, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Client.4.0.38\lib\net40\ServiceStack.Client.dll</HintPath>
+    <Reference Include="ServiceStack.Client, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Client.4.0.46\lib\net40\ServiceStack.Client.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Common, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Common.4.0.38\lib\net40\ServiceStack.Common.dll</HintPath>
+    <Reference Include="ServiceStack.Common, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.4.0.46\lib\net40\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Interfaces.4.0.38\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.Interfaces.4.0.46\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.OrmLite, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.OrmLite.4.0.38\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+    <Reference Include="ServiceStack.OrmLite, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.4.0.46\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.OrmLite.Sqlite, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.OrmLite.Sqlite.Mono.4.0.38\lib\net45\ServiceStack.OrmLite.Sqlite.dll</HintPath>
+    <Reference Include="ServiceStack.OrmLite.Sqlite, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.Sqlite.Mono.4.0.46\lib\net45\ServiceStack.OrmLite.Sqlite.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Razor, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Razor.4.0.38\lib\net45\ServiceStack.Razor.dll</HintPath>
+    <Reference Include="ServiceStack.Razor, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Razor.4.0.46\lib\net45\ServiceStack.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Redis, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Redis.4.0.38\lib\net40\ServiceStack.Redis.dll</HintPath>
+    <Reference Include="ServiceStack.Redis, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Redis.4.0.46\lib\net40\ServiceStack.Redis.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Server, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Server.4.0.38\lib\net45\ServiceStack.Server.dll</HintPath>
+    <Reference Include="ServiceStack.Server, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Server.4.0.46\lib\net45\ServiceStack.Server.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Text, Version=4.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Text.4.0.38\lib\net40\ServiceStack.Text.dll</HintPath>
+    <Reference Include="ServiceStack.Text, Version=4.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.0.46\lib\net40\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -104,8 +105,8 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Razor.4.0.38\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.Razor.4.0.46\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -115,11 +116,11 @@
     <Content Include="img\AngularJS-large.png" />
     <Content Include="img\architecture-htmlformat.png" />
     <Content Include="img\cascading-layouts.png" />
-    <Content Include="img\dart-logo.png" />
     <Content Include="img\green_dust_scratch.png" />
     <Content Include="img\grohl-vs-vedder.png" />
     <Content Include="img\markup-impl.png" />
     <Content Include="img\page-icon.png" />
+    <Content Include="img\react-logo.png" />
     <Content Include="img\rip_jobs.png" />
     <Content Include="img\rockstars-view.png" />
     <Content Include="img\thumb-01.jpg" />
@@ -135,8 +136,9 @@
     <Content Include="img\title-bg.png" />
     <Content Include="js\angular.min.js" />
     <Content Include="js\jquip.events.css.ajax.min.js" />
-    <Content Include="sqlite3.dll" />
-    <Content Include="sqlite\x86\sqlite3.dll" />
+    <Content Include="sqlite3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="stars\alive\grohl.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
