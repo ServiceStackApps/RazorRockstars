@@ -482,7 +482,7 @@
 
     <pre><code>
     [ClientCanSwapTemplates]
-    public class RockstarsService : RestServiceBase<Rockstars> { ... }
+    public class RockstarsService : Service { ... }
     </code></pre>
     
     <p>
@@ -675,7 +675,7 @@
     </p>
 
     <pre><code>
-    SetConfig(new EndpointHostConfig {
+    SetConfig(new HostConfig {
         CustomHttpHandlers = {
             { HttpStatusCode.NotFound, new RazorHandler("/notfound") }
         }
@@ -767,7 +767,7 @@
     </p>
 
     <pre><code>
-    SetConfig(new EndpointHostConfig {
+    SetConfig(new HostConfig {
         DebugMode = true,
     });
     </code></pre>
@@ -806,70 +806,37 @@
         Another way to improve start times is to create a new HTML-only version (based on Markdown Razor's core) and replicate much 
         of MVC Razor's functionality. A new implementation in this way stands to be even faster than Markdown Razor since it avoids the Markup-to-HTML penalty.
         More importantly being in control of our own implementation allows us to be more innovative and lets us borrow pages 
-        from other languages play books. <br/>
-        i.e. it could be nicer if Razor syntax was more declarative and less mechanical where instead of 
-        <b>@@RenderBody()</b> you could just have <b>[body]</b> and still retain the same syntax to include any <b>[section]</b>, 
-        <b>[partial]</b> or <b>[var]</b> etc. This would be friendlier and easier for content editors to grok as they don't need to remember the 
-        implementation mechanics and can just declare their intent. Here are some more potential examples:
+        from other languages play books.
     </p>
     
-    <pre><code>    
-    [body]
-    [twitter-feed for:ServiceStack size:10]
-    [sidebar with:links,ads]
-
-    [foreach link in links]
-        &lt;a href="[link url]"&gt;[link name]&lt;/a&gt;
-    [/foreach]
-    </code></pre>
-
-    
-    <a href="http://angularjs.org"><img src="/img/AngularJS-large.png" align="right" style="padding:10px 20px 20px 20px; width:268px;" /></a>
     <h3>Optimizing for Single Page Apps</h3>
+    <a href="https://github.com/ServiceStack/ServiceStackVS/blob/master/angular-spa.md"><img src="/img/AngularJS-large.png" align="right" style="padding:10px 20px 20px 20px; width:268px;" /></a>
     <p>
         One way we're currently improving the situation (that also provides a better UX for end-users) has been focusing on making 
-        <a href="https://servicestack.net/100k-downloads/#spa-optimized">ServiceStack the ideal platform for Single Page Apps</a>
-        - to this end, we're already shipping many <a href="https://servicestack.net/100k-downloads/#spa-optimized">best-of-class features</a> 
+        ServiceStack the ideal platform for Single Page Apps
+        - to this end, we're already shipping many <a href="http://mono.servicestack.net/100k-downloads/#spa-optimized">best-of-class features</a> 
         and since Single Page Apps rely on client-side views for rendering, they escape the .NET compilation tax. 
     <p>
-            
     </p>
         With the latest release of WebStorm, JetBrains gives us a glimpse into the 
         <a href="http://www.youtube.com/watch?v=wCVwdvufTds&feature=youtu.be">development experience of Live Editing</a> 
         where they showcase the instant feedback loop possible when developing a rich client-side AngularJS App With WebStorm and Chrome.
     </p>
+    <a href="https://github.com/ServiceStackApps/Chat-React#modern-reactjs-apps-with-net"><img src="/img/react-logo.png" align="left" style="padding:10px 20px 20px 0px; width:268px;" /></a>
     <p>
         Up until this point we've been recommending using a 
         <a href="https://github.com/ServiceStack/SocialBootstrapApi">MVC + ServiceStack hybrid template for Single Page Apps</a>.
-        With this release of MVC Razor support, ServiceStack is now a complete and we're able to simplify the stack by removing 
-        the dependency on MVC and will begin shipping new Single Page App templates for the most popular client-side frameworks, with:  
-        <a href="http://angularjs.org">AngularJS</a> and <a href="http://backbonejs.org">Backbone.js</a> planned for initially. 
-        We'll continue to improve this story and ensure first-class support for advanced Web App features like history.pushState(),
-        which has always been a bit awkward to do in MVC.
-    </p>
-    
-    <a href="http://www.dartlang.org"><img src="/img/dart-logo.png" align="right" style="padding:10px 20px 10px 20px;" /></a>    
-    <h3>Hybrid Dynamic Web + Typed Services Stack - Best of both worlds</h3>
-    <p>
-        Another option we're considering is to provide a hybrid Web + Web Services approach with tight-integration between ServiceStack 
-        and one of the dynamic languages with a focus on fast iteration times and Live Reloading enabled.
-        We still believe in typed an end-to-end framework remains the 
-        <a href="https://github.com/ServiceStack/ServiceStack/wiki/Advantages-of-message-based-web-services">best long-term solution for web services</a>.
-        But with the ASP.NET packaging model the way it is and the slow compilation times of .NET, it's becoming increasingly hard to 
-        ignore the productivity benefits being had in other dynamic languages.
-    </p>
-    
-    <p>
-        So far Google's new language for the web <a href="http://www.dartlang.org">Dart</a> is looking like a stand-out here that should appeal 
-        to C# devs thanks to its familiar syntax (we like it because it supports the same platforms ServiceStack does :). 
-        <a href="http://programmers.stackexchange.com/a/164304/14025">Dart already holds a number of advantages over JavaScript</a>        
-        and the Dart team and Chrome engineers have been working closely together to improve the integration between Dart IDE and Chrome 
-        where they're actively releasing <a href="http://www.dartlang.org/dartium/">new custom builds of Chrome</a> that allow debugging of 
-        native Dart from inside both Dartium and the Dart IDE. We're going to explore this story further and if it looks to provide
-        productivity benefits we'll produce a fast native comms pipeline between ServiceStack and the Dart VM runtime. 
-        We have already developed <a href="https://github.com/mythz/DartJsonClient">great HTTP integration with ServiceStack</a> 
-        with one of the most fluent, intuitive API's you're likely to see in a 
-        <a href="https://github.com/mythz/DartJsonClient">Json Client</a>.
+        With this release of MVC Razor support, ServiceStack is now a complete and we're able to simplify the stack by removing
+        the dependency on MVC and included in
+        <a href="https://github.com/ServiceStack/ServiceStackVS">ServiceStackVS</a> are new Single Page App templates for 
+        the most popular client-side frameworks:
+        <a href="https://github.com/ServiceStackApps/Chat-React#modern-reactjs-apps-with-net">React</a> and
+        <a href="https://github.com/ServiceStack/ServiceStackVS/blob/master/angular-spa.md">AngularJS</a>,
+        our exciting new
+        <a href="https://github.com/ServiceStackApps/ReactDesktopApps">React Desktop Apps</a> template takes this one step further and
+        provides all the tools to package your ASP.NET React Web App into an Winforms, OSX Cocoa and Linux/Win/OSX Console App
+        We'll continue to improve this story and ensure first-class support for advanced Web App features with integration with SPA 
+        Routing frameworks, which has always awkward to be able to do in MVC.
     </p>
 
     <b class="clear"></b>
