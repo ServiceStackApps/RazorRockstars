@@ -133,6 +133,7 @@
     <Content Include="img\thumb-08.jpg" />
     <Content Include="img\thumb-09.jpg" />
     <Content Include="img\tileable_wood_texture.png" />
+    <Content Include="img\title-bg-aws.png" />
     <Content Include="img\title-bg.png" />
     <Content Include="js\angular.min.js" />
     <Content Include="js\jquip.events.css.ajax.min.js" />

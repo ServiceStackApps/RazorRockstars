@@ -44,14 +44,16 @@ namespace RazorRockstars.S3
         }
 
         [Test]
-        public void Copy_Razor_files_to_awsdemo_Bucket()
+        public void Copy_Razor_files_to_AWS_Bucket()
         {
             var fs = new FileSystemVirtualPathProvider(appHost, "~/../RazorRockstars.WebHost".MapHostAbsolutePath());
 
             var skipDirs = new[] { "bin", "obj" };
             var matchingFileTypes = new[] { "cshtml", "md", "css", "js", "png", "jpg" };
             var replaceHtml = new Dictionary<string, string> {
-                { "", "" },
+                { "title-bg.png", "title-bg-aws.png" }, //Title Background
+                { "https://gist.github.com/3617557.js", "https://gist.github.com/mythz/396dbf54ce6079cc8b2d.js" }, //AppHost.cs
+                { "https://gist.github.com/3616766.js", "https://gist.github.com/mythz/ca524426715191b8059d.js" }, //RockstarsService.cs
             };
 
             foreach (var file in fs.GetAllFiles())
@@ -59,9 +61,21 @@ namespace RazorRockstars.S3
                 if (skipDirs.Any(x => file.VirtualPath.StartsWith(x))) continue;
                 if (!matchingFileTypes.Contains(file.Extension)) continue;
 
-                using (var stream = file.OpenRead())
+                if (file.Extension == "cshtml")
                 {
-                    s3.WriteFile(file.VirtualPath, stream);
+                    var contents = file.ReadAllText();
+                    foreach (var entry in replaceHtml)
+                    {
+                        contents = contents.Replace(entry.Key, entry.Value);
+                    }
+                    s3.WriteFile(file.VirtualPath, contents);
+                }
+                else
+                {
+                    using (var stream = file.OpenRead())
+                    {
+                        s3.WriteFile(file.VirtualPath, stream);
+                    }
                 }
             }
         }
