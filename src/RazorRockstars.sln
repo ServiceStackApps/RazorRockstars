@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledView
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompiledViews", "CompiledViews", "{FDC20F19-B8EF-4212-8A3E-E5D31755CE76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.S3", "RazorRockstars.S3\RazorRockstars.S3.csproj", "{71F496BD-F855-46DB-8912-F397D84BDB71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,18 @@ Global
 		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8B4F593B-BFE5-4652-9AB4-8AE18A017066}.Release|x86.ActiveCfg = Release|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Debug|x86.Build.0 = Debug|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Release|x86.ActiveCfg = Release|Any CPU
+		{71F496BD-F855-46DB-8912-F397D84BDB71}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
