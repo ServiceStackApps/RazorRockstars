@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ServiceStack;
 using ServiceStack.Aws.DynamoDb;
@@ -33,7 +34,7 @@ namespace RazorRockstars.S3
         public List<Rockstar> Results { get; set; }
     }
 
-    //Poco Data Model for OrmLite + SeedData 
+    //Poco Data Model for DynamoDB + SeedData 
     [Route("/rockstars", "POST")]
     [References(typeof(RockstarAgeIndex))]
     public class Rockstar
@@ -68,6 +69,10 @@ namespace RazorRockstars.S3
 
         [RangeKey]
         public int Id { get; set; }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public bool Alive { get; set; }
     }
 
     [ClientCanSwapTemplates]
@@ -90,7 +95,8 @@ namespace RazorRockstars.S3
 
         public object Get(SearchRockstars request)
         {
-            return new RockstarsResponse {
+            return new RockstarsResponse
+            {
                 Aged = request.Age,
                 Total = (int)PocoDynamo.ScanItemCount<Rockstar>(),
                 Results = request.Id != default(int)
