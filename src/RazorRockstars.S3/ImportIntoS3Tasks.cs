@@ -53,7 +53,8 @@ namespace RazorRockstars.S3
             var replaceHtml = new Dictionary<string, string> {
                 { "title-bg.png", "title-bg-aws.png" }, //Title Background
                 { "https://gist.github.com/3617557.js", "https://gist.github.com/mythz/396dbf54ce6079cc8b2d.js" }, //AppHost.cs
-                { "https://gist.github.com/3616766.js", "https://gist.github.com/mythz/ca524426715191b8059d.js" }, //RockstarsService.cs
+                { "https://gist.github.com/3616766.js", "https://gist.github.com/mythz/ca524426715191b8059d.js" }, //S3 RockstarsService.cs
+                { "RazorRockstars.WebHost/RockstarsService.cs", "RazorRockstars.S3/RockstarsService.cs" }          //S3 RockstarsService.cs
             };
 
             foreach (var file in fs.GetAllFiles())
@@ -78,6 +79,18 @@ namespace RazorRockstars.S3
                     }
                 }
             }
+        }
+
+        [Test]
+        public void Update_Razor_and_Markdown_pages_at_runtime()
+        {
+            var fs = new FileSystemVirtualPathProvider(appHost, "~/../RazorRockstars.WebHost".MapHostAbsolutePath());
+
+            var kurtRazor = fs.GetFile("stars/dead/cobain/default.cshtml");
+            s3.WriteFile(kurtRazor.VirtualPath, "[UPDATED RAZOR] " + kurtRazor.ReadAllText());
+
+            var kurtMarkdown = fs.GetFile("stars/dead/cobain/Content.md");
+            s3.WriteFile(kurtMarkdown.VirtualPath, "[UPDATED MARKDOWN] " + kurtMarkdown.ReadAllText());
         }
     }
 }
