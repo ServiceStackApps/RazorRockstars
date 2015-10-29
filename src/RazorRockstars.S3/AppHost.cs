@@ -13,15 +13,12 @@ namespace RazorRockstars.S3
 {
     public class AppHost : AppHostBase
     {
-        public AppHost() : base("S3 RazorRockstars", typeof(RockstarsService).Assembly) {}
+        public AppHost() : base("S3 RazorRockstars", typeof(RockstarsService).Assembly) { }
 
         public override void Configure(Container container)
         {
             //RockstarsService is powered by PocoDynamo and DynamoDB
-            var dynamoClient = new AmazonDynamoDBClient("keyId", "key", new AmazonDynamoDBConfig {
-                ServiceURL = "http://localhost:8000", //Local DynamoDB
-            });
-            container.Register<IPocoDynamo>(c => new PocoDynamo(dynamoClient));
+            container.Register<IPocoDynamo>(c => new PocoDynamo(AwsConfig.CreateAmazonDynamoDb()));
 
             //Register and Create Missing DynamoDB Tables
             var db = container.Resolve<IPocoDynamo>();

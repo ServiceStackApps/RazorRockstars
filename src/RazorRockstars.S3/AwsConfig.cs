@@ -1,24 +1,25 @@
 using System;
-using Amazon;
 using Amazon.DynamoDBv2;
-using Amazon.S3;
-using ServiceStack;
 using ServiceStack.Aws.DynamoDb;
-using ServiceStack.Aws.S3;
 using ServiceStack.Configuration;
 
 namespace RazorRockstars.S3
 {
     public static class AwsConfig
     {
-        public const string DynamoDbUrl = "http://localhost:8000"; //Local DynamoDB
-        public const string S3BucketName = "aws-razor-rockstars";
+        public static string S3BucketName
+        {
+            get { return ConfigUtils.GetAppSetting("S3BucketName", "aws-razor-rockstars"); }
+        }
 
         public static IAmazonDynamoDB CreateAmazonDynamoDb()
         {
-            var dynamoClient = new AmazonDynamoDBClient("keyId", "key", new AmazonDynamoDBConfig {
-                ServiceURL = DynamoDbUrl,
-            });
+            var dynamoClient = new AmazonDynamoDBClient(
+                ConfigUtils.GetNullableAppSetting("DynamoDbAccessKey") ?? AwsAccessKey, 
+                ConfigUtils.GetNullableAppSetting("DynamoDbSecretKey") ?? AwsSecretKey, 
+                new AmazonDynamoDBConfig {
+                    ServiceURL = ConfigUtils.GetAppSetting("DynamoDbUrl","http://dynamodb.us-east-1.amazonaws.com"),
+                });
             return dynamoClient;
         }
 
