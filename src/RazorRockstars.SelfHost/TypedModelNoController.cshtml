@@ -3,9 +3,7 @@
 @{
     Layout = "SimpleLayout";
     ViewBag.Title = "Page with typed 'Rockstars' model and no C# controller";
-    var rockstars = Model.Age.HasValue 
-        ? Db.Select<Rockstar>(q => q.Age == Model.Age.Value)
-        : Db.Select<Rockstar>();
+    var rockstars = ((RockstarsResponse)base.ExecuteService<RockstarsService>(s => s.Get(new SearchRockstars { Age = Model.Age }))).Results;
     var title = Model.Age.HasValue ? "{0} year old rockstars".Fmt(Model.Age) : "All Rockstars";
 }
 

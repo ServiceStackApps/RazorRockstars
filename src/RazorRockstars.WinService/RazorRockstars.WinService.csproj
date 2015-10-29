@@ -244,6 +244,7 @@
     <Content Include="img\tileable_wood_texture.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="img\title-bg-aws.png" />
     <Content Include="img\title-bg.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

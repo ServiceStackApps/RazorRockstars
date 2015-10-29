@@ -154,6 +154,7 @@
     <Content Include="default.cshtml" />
     <EmbeddedResource Include="htmlreport.css" />
     <EmbeddedResource Include="img\react-logo.png" />
+    <Content Include="img\title-bg-aws.png" />
     <Content Include="Login.cshtml" />
     <Content Include="NoModelNoController.cshtml" />
     <Content Include="NotFound.cshtml" />
