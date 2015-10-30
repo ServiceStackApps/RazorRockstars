@@ -50,7 +50,7 @@ namespace RazorRockstars.S3
 
             var skipDirs = new[] { "bin", "obj" };
             var matchingFileTypes = new[] { "cshtml", "md", "css", "js", "png", "jpg" };
-            var replaceHtml = new Dictionary<string, string> {
+            var replaceHtmlTokens = new Dictionary<string, string> {
                 { "title-bg.png", "title-bg-aws.png" }, //Title Background
                 { "https://gist.github.com/3617557.js", "https://gist.github.com/mythz/396dbf54ce6079cc8b2d.js" }, //AppHost.cs
                 { "https://gist.github.com/3616766.js", "https://gist.github.com/mythz/ca524426715191b8059d.js" }, //S3 RockstarsService.cs
@@ -64,9 +64,9 @@ namespace RazorRockstars.S3
 
                 if (file.Extension == "cshtml")
                 {
-                    var contents = file.ReadAllText();
-                    replaceHtml.Each(x => contents = contents.Replace(x.Key, x.Value));
-                    s3.WriteFile(file.VirtualPath, contents);
+                    var html = file.ReadAllText();
+                    replaceHtmlTokens.Each(x => html = html.Replace(x.Key, x.Value));
+                    s3.WriteFile(file.VirtualPath, html);
                 }
                 else
                 {
