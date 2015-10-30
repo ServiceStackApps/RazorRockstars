@@ -65,18 +65,12 @@ namespace RazorRockstars.S3
                 if (file.Extension == "cshtml")
                 {
                     var contents = file.ReadAllText();
-                    foreach (var entry in replaceHtml)
-                    {
-                        contents = contents.Replace(entry.Key, entry.Value);
-                    }
+                    replaceHtml.Each(x => contents = contents.Replace(x.Key, x.Value));
                     s3.WriteFile(file.VirtualPath, contents);
                 }
                 else
                 {
-                    using (var stream = file.OpenRead())
-                    {
-                        s3.WriteFile(file.VirtualPath, stream);
-                    }
+                    s3.WriteFile(file);
                 }
             }
         }
