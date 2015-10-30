@@ -102,7 +102,7 @@ namespace RazorRockstars.S3
                 Results = request.Id != default(int)
                     ? new[] { PocoDynamo.GetItem<Rockstar>(request.Id) }.ToList()
                     : request.Age.HasValue
-                        ? PocoDynamo.FromQueryIndex<RockstarAgeIndex>(q => q.Age == request.Age.Value).QueryInto<Rockstar>().ToList()
+                        ? PocoDynamo.FromQueryIndex<RockstarAgeIndex>(q => q.Age == request.Age.Value).ExecInto<Rockstar>().ToList()
                         : PocoDynamo.ScanAll<Rockstar>().ToList()
             };
         }
@@ -121,7 +121,7 @@ namespace RazorRockstars.S3
 
         public object Any(ResetRockstars request)
         {
-            var rockstarIds = PocoDynamo.FromScan<Rockstar>().Select(x => x.Id).Scan().Map(x => x.Id);
+            var rockstarIds = PocoDynamo.FromScan<Rockstar>().Select(x => x.Id).Exec().Map(x => x.Id);
             PocoDynamo.DeleteItems<Rockstar>(rockstarIds);
             PocoDynamo.PutItems(SeedData);
             return Get(new SearchRockstars());
