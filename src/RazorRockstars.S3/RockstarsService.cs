@@ -62,6 +62,13 @@ namespace RazorRockstars.S3
         }
     }
 
+    [Route("/updateS3")]
+    public class UpdateS3
+    {
+        public bool Razor { get; set; }
+        public bool Clear { get; set; }
+    }
+
     public class RockstarAgeIndex : IGlobalIndex<Rockstar>
     {
         [HashKey]
@@ -125,6 +132,33 @@ namespace RazorRockstars.S3
             PocoDynamo.DeleteItems<Rockstar>(rockstarIds);
             PocoDynamo.PutItems(SeedData);
             return Get(new SearchRockstars());
+        }
+
+        public object Any(UpdateS3 request)
+        {
+            if (request.Razor)
+            {
+                var kurtRazor = VirtualFiles.GetFile("stars/dead/cobain/default.cshtml");
+                VirtualFiles.WriteFile(kurtRazor.VirtualPath, UpdateContent("UPDATED RAZOR", kurtRazor.ReadAllText(), request.Clear));
+            }
+            
+            var kurtMarkdown = VirtualFiles.GetFile("stars/dead/cobain/Content.md");
+            VirtualFiles.WriteFile(kurtMarkdown.VirtualPath, UpdateContent("UPDATED MARKDOWN", kurtMarkdown.ReadAllText(), request.Clear));
+
+            return HttpResult.Redirect("/stars/dead/cobain/");
+        }
+
+        private string UpdateContent(string text, string contents, bool clear)
+        {
+            const string EndCustomTag = "</h2>\n";
+            var pos = contents.IndexOf(EndCustomTag);
+            if (pos >= 0)
+                contents = contents.Substring(pos + EndCustomTag.Length);
+
+            if (clear)
+                return contents;
+
+            return "<h2 style='color:green'>" + text + " at " + DateTime.UtcNow.ToLongTimeString() + EndCustomTag + contents;
         }
     }
 }
