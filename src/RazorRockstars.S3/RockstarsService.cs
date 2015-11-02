@@ -4,6 +4,8 @@ using System.Linq;
 using ServiceStack;
 using ServiceStack.Aws.DynamoDb;
 using ServiceStack.DataAnnotations;
+using ServiceStack.Formats;
+using ServiceStack.Razor;
 using ServiceStack.Text;
 
 namespace RazorRockstars.S3
@@ -140,10 +142,12 @@ namespace RazorRockstars.S3
             {
                 var kurtRazor = VirtualFiles.GetFile("stars/dead/cobain/default.cshtml");
                 VirtualFiles.WriteFile(kurtRazor.VirtualPath, UpdateContent("UPDATED RAZOR", kurtRazor.ReadAllText(), request.Clear));
+                HostContext.GetPlugin<RazorFormat>().RefreshPage(kurtRazor.VirtualPath);
             }
             
             var kurtMarkdown = VirtualFiles.GetFile("stars/dead/cobain/Content.md");
             VirtualFiles.WriteFile(kurtMarkdown.VirtualPath, UpdateContent("UPDATED MARKDOWN", kurtMarkdown.ReadAllText(), request.Clear));
+            HostContext.GetPlugin<MarkdownFormat>().RefreshPage(kurtMarkdown.VirtualPath);
 
             return HttpResult.Redirect("/stars/dead/cobain/");
         }

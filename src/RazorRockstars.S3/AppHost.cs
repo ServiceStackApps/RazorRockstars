@@ -34,9 +34,11 @@ namespace RazorRockstars.S3
             //Insert Rockstar POCOs in DynamoDB
             db.PutItems(RockstarsService.SeedData);
 
-            //Check LastModified in S3 for changes and recompile Razor + Markdown pages if needed
-            GetPlugin<MarkdownFormat>().CheckLastModifiedForChanges = true;
-            Plugins.Add(new RazorFormat { CheckLastModifiedForChanges = true });
+            Plugins.Add(new RazorFormat());
+
+            //Uncomment to check LastModified in S3 for changes and recompile Razor + Markdown pages if needed
+            //GetPlugin<MarkdownFormat>().CheckLastModifiedForChanges = true;
+            //Plugins.Add(new RazorFormat { CheckLastModifiedForChanges = true });
         }
 
         public override List<IVirtualPathProvider> GetVirtualFileSources()
