@@ -3,7 +3,7 @@
     ViewBag.Title = "Page with no model and no C# controller - just this page :)";
     int age = 0;
     var hasAge = Request.QueryString["Age"] != null && int.TryParse(Model.Age, out age);
-    var rockstars = ((RockstarsResponse)base.ExecuteService<RockstarsService>(s => s.Get(new SearchRockstars { Age = hasAge ? age : (int?)null }))).Results;
+    var rockstars = base.Gateway.Send(new SearchRockstars { Age = hasAge ? age : (int?)null }).Results;
     var title = hasAge ? "{0} year old rockstars".Fmt(age) : "All Rockstars";
 }
 <div id="content-page">

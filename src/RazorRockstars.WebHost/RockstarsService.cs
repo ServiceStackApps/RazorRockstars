@@ -9,7 +9,7 @@ namespace RazorRockstars
     [Route("/rockstars")]
     [Route("/rockstars/{Id}")]
     [Route("/rockstars/aged/{Age}")]
-    public class SearchRockstars
+    public class SearchRockstars : IReturn<RockstarsResponse>
     {
         public int? Age { get; set; }
         public int Id { get; set; }
@@ -17,7 +17,7 @@ namespace RazorRockstars
 
     [Route("/rockstars/delete/{Id}")]
     public class DeleteRockstar
-    {
+    {   
         public int Id { get; set; }
     }
 

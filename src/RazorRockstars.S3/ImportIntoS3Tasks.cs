@@ -24,7 +24,7 @@ namespace RazorRockstars.S3
             s3 = new S3VirtualPathProvider(s3Client, AwsConfig.S3BucketName, appHost);
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public void TestFixtureTearDown()
         {
             appHost.Dispose();

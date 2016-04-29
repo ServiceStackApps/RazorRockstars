@@ -3,7 +3,7 @@
 @{
     Layout = "SimpleLayout";
     ViewBag.Title = "Page with typed 'Rockstars' model and no C# controller";
-    var rockstars = ((RockstarsResponse)base.ExecuteService<RockstarsService>(s => s.Get(new SearchRockstars { Age = Model.Age }))).Results;
+    var rockstars = base.Gateway.Send(new SearchRockstars { Age = Model.Age }).Results;
     var title = Model.Age.HasValue ? "{0} year old rockstars".Fmt(Model.Age) : "All Rockstars";
 }
 
