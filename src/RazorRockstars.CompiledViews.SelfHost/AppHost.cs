@@ -2,6 +2,7 @@
 using Funq;
 using ServiceStack;
 using ServiceStack.Data;
+using ServiceStack.Formats;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
 
@@ -22,6 +23,7 @@ namespace RazorRockstars.CompiledViews.SelfHost
             Plugins.Add(new RazorFormat {
                 LoadFromAssemblies = { typeof(RockstarsService).Assembly }
             });
+            Plugins.Add(new MarkdownFormat());
 
             Plugins.Add(new PostmanFeature());
             Plugins.Add(new CorsFeature());

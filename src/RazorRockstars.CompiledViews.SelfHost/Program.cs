@@ -15,8 +15,6 @@ namespace RazorRockstars.CompiledViews.SelfHost
         {
             //LogManager.LogFactory = new ConsoleLogFactory();
 
-            ExportMonoSqliteDll();
-
             new AppHost()
                 .Init()
                 .Start("http://*:3333/");
@@ -27,46 +25,5 @@ namespace RazorRockstars.CompiledViews.SelfHost
 
             Thread.Sleep(Timeout.Infinite);
         }
-
-        public static void ExportMonoSqliteDll()
-        {
-            if (Env.IsMono)
-                return; //Uses system sqlite3.so or sqlite3.dylib
-
-            var resPath = "{0}.sqlite3.dll".Fmt(typeof(AppHost).Namespace);
-
-            var resInfo = typeof(AppHost).Assembly.GetManifestResourceInfo(resPath);
-            if (resInfo == null)
-                throw new Exception("Couldn't load sqlite3.dll");
-
-            var dllBytes = typeof(AppHost).Assembly.GetManifestResourceStream(resPath).ReadFully();
-            var dirPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-            var filePath = Path.Combine(dirPath, "sqlite3.dll");
-
-            File.WriteAllBytes(filePath, dllBytes);
-        }
-
-        public static void ExportWindowsSqliteDll()
-        {
-            var resPath = "{0}.{1}.SQLite.Interop.dll".Fmt(typeof(AppHost).Namespace, Environment.Is64BitProcess ? "x64" : "x86");
-
-            var resInfo = typeof(AppHost).Assembly.GetManifestResourceInfo(resPath);
-            if (resInfo == null)
-                throw new Exception("Couldn't load SQLite.Interop.dll");
-
-            var dllBytes = typeof(AppHost).Assembly.GetManifestResourceStream(resPath).ReadFully();
-
-            var dirPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                               Environment.Is64BitProcess ? "x64" : "x86");
-
-            var filePath = Path.Combine(dirPath, "SQLite.Interop.dll");
-
-            if (!Directory.Exists(dirPath))
-                Directory.CreateDirectory(dirPath);
-
-            File.WriteAllBytes(filePath, dllBytes);
-        }
-
     }
 }

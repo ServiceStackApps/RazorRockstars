@@ -3,6 +3,7 @@ using Funq;
 using ServiceStack;
 using ServiceStack.Auth;
 using ServiceStack.Data;
+using ServiceStack.Formats;
 using ServiceStack.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
@@ -19,6 +20,7 @@ namespace RazorRockstars.WebHost
             LogManager.LogFactory = new ConsoleLogFactory();
 
             Plugins.Add(new RazorFormat());
+            Plugins.Add(new MarkdownFormat());
 
             container.Register<IDbConnectionFactory>(
                 new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider));

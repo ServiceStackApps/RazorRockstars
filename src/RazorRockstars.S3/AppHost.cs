@@ -24,7 +24,7 @@ namespace RazorRockstars.S3
             //Add S3 Bucket as lowest priority Virtual Path Provider 
             //All Razor Views, Markdown Content, imgs, js, css, etc are being served from an S3 Bucket
             var s3Client = new AmazonS3Client(AwsConfig.AwsAccessKey, AwsConfig.AwsSecretKey, RegionEndpoint.USEast1);
-            VirtualFiles = new S3VirtualPathProvider(s3Client, AwsConfig.S3BucketName, this);
+            VirtualFiles = new S3VirtualFiles(s3Client, AwsConfig.S3BucketName);
 
             //Register and Create Missing DynamoDB Tables
             var db = container.Resolve<IPocoDynamo>();
@@ -35,6 +35,7 @@ namespace RazorRockstars.S3
             db.PutItems(RockstarsService.SeedData);
 
             Plugins.Add(new RazorFormat());
+            Plugins.Add(new MarkdownFormat());
 
             //Uncomment to check LastModified in S3 for changes and recompile Razor + Markdown pages if needed
             //GetPlugin<MarkdownFormat>().CheckLastModifiedForChanges = true;

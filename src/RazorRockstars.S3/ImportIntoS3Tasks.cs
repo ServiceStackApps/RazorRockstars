@@ -5,8 +5,8 @@ using Amazon.S3;
 using NUnit.Framework;
 using ServiceStack;
 using ServiceStack.Aws.S3;
+using ServiceStack.IO;
 using ServiceStack.Testing;
-using ServiceStack.VirtualPath;
 
 namespace RazorRockstars.S3
 {
@@ -14,14 +14,14 @@ namespace RazorRockstars.S3
     public class ImportIntoS3Tasks
     {
         readonly ServiceStackHost appHost;
-        readonly S3VirtualPathProvider s3;
+        readonly S3VirtualFiles s3;
 
         public ImportIntoS3Tasks()
         {
             appHost = new BasicAppHost().Init();
 
             var s3Client = new AmazonS3Client(AwsConfig.AwsAccessKey, AwsConfig.AwsSecretKey, RegionEndpoint.USEast1);
-            s3 = new S3VirtualPathProvider(s3Client, AwsConfig.S3BucketName, appHost);
+            s3 = new S3VirtualFiles(s3Client, AwsConfig.S3BucketName);
         }
 
         [OneTimeTearDown]
@@ -46,7 +46,7 @@ namespace RazorRockstars.S3
         [Test]
         public void Copy_Razor_files_to_AWS_Bucket()
         {
-            var fs = new FileSystemVirtualPathProvider(appHost, "~/../RazorRockstars.WebHost".MapHostAbsolutePath());
+            var fs = new FileSystemVirtualFiles( "~/../RazorRockstars.WebHost".MapHostAbsolutePath());
 
             var skipDirs = new[] { "bin", "obj" };
             var matchingFileTypes = new[] { "cshtml", "md", "css", "js", "png", "jpg" };
@@ -80,7 +80,7 @@ namespace RazorRockstars.S3
         [Test]
         public void Update_Razor_and_Markdown_pages_at_runtime()
         {
-            var fs = new FileSystemVirtualPathProvider(appHost, "~/../RazorRockstars.WebHost".MapHostAbsolutePath());
+            var fs = new FileSystemVirtualFiles("~/../RazorRockstars.WebHost".MapHostAbsolutePath());
 
             var kurtRazor = fs.GetFile("stars/dead/cobain/default.cshtml");
             s3.WriteFile(kurtRazor.VirtualPath, "[UPDATED RAZOR] " + kurtRazor.ReadAllText());
