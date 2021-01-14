@@ -17,8 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FF5DC9B6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledViews", "RazorRockstars.CompiledViews\RazorRockstars.CompiledViews.csproj", "{CBB4DD4C-5E48-4878-A018-658899F250F1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{72F5E7DC-A4A5-49E9-9AF5-A2109E1D64C8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledViews.SelfHost", "RazorRockstars.CompiledViews.SelfHost\RazorRockstars.CompiledViews.SelfHost.csproj", "{82216D76-A301-4746-82D6-94DC5E014330}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorRockstars.CompiledViews.WebHost", "RazorRockstars.CompiledViews.WebHost\RazorRockstars.CompiledViews.WebHost.csproj", "{237A767C-EC36-4CBB-957E-70CE1CA041E9}"

@@ -2,6 +2,7 @@
 [Bb]in/
 [Oo]bj/
 .idea/
+.vs/
 
 # mstest test results
 TestResults
@@ -13,7 +14,7 @@ TestResults
 *.suo
 *.user
 *.sln.docstates
-.vs/
+*.secrets.cs
 
 # Build results
 [Dd]ebug/
