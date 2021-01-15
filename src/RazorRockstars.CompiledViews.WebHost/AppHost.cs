@@ -22,7 +22,7 @@ namespace RazorRockstars.CompiledViews.WebHost
             SetConfig(new HostConfig
             {
                 DebugMode = true,
-                EmbeddedResourceSources = { Assembly.GetExecutingAssembly() },
+                EmbeddedResourceSources = { typeof(RockstarsService).Assembly },
             });
 
             Plugins.Add(new RazorFormat
